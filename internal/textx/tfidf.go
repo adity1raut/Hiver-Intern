@@ -1,7 +1,6 @@
-// Package textx provides the small amount of text machinery this project needs:
-// a tokenizer, a TF-IDF vectorizer with an inverted-index nearest-neighbour
-// search, and spherical k-means. Implemented from scratch so the whole pipeline
-// builds with zero third-party dependencies.
+// Package textx provides a tokenizer, a TF-IDF vectorizer with inverted-index
+// nearest-neighbour search, and spherical k-means. Written from scratch so the
+// pipeline builds with no third-party dependencies.
 package textx
 
 import (
@@ -11,8 +10,7 @@ import (
 	"unicode"
 )
 
-// Stopwords: standard English closed-class words plus a few tokens that are
-// ubiquitous in this corpus and carry no intent signal.
+// Closed-class English words plus corpus-specific noise that carries no intent signal.
 var stopwords = map[string]bool{}
 
 func init() {
@@ -25,8 +23,7 @@ func init() {
 	}
 }
 
-// Tokenize lowercases and splits on non-alphanumeric runes, dropping stopwords,
-// pure numbers shorter than 3 digits, and 1-character tokens.
+// Tokenize lowercases, splits on non-alphanumeric runes and drops stopwords.
 func Tokenize(s string) []string {
 	fields := strings.FieldsFunc(strings.ToLower(s), func(r rune) bool {
 		return !unicode.IsLetter(r) && !unicode.IsDigit(r) && r != '\''
@@ -53,8 +50,7 @@ func Analyze(s string) []string {
 	return out
 }
 
-// Sparse is an L2-normalised sparse vector: parallel index/value slices sorted
-// by index.
+// Sparse is an L2-normalised sparse vector, sorted by index.
 type Sparse struct {
 	Idx []int32
 	Val []float32
@@ -79,8 +75,7 @@ func (a Sparse) Dot(b Sparse) float64 {
 	return s
 }
 
-// Vectorizer is a TF-IDF vectorizer over unigrams+bigrams with sublinear TF and
-// L2 normalisation (the scikit-learn TfidfVectorizer defaults this project relies on).
+// Vectorizer is TF-IDF over unigrams+bigrams with sublinear TF and L2 normalisation.
 type Vectorizer struct {
 	Vocab map[string]int32 `json:"vocab"`
 	IDF   []float32        `json:"idf"`

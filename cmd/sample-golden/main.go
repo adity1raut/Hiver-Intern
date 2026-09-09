@@ -1,14 +1,9 @@
-// Command sample-golden draws the golden evaluation set from the EVAL POOL
-// (the later 30% of Delta's history, never seen by retrieval).
+// Command sample-golden draws the evaluation set from the eval pool.
 //
-// Two strata, kept separate on purpose:
-//
-//	random   - a uniform sample. Metrics on this stratum alone are an unbiased
-//	           estimate of live performance on Delta's real inbound mix.
-//	targeted - a stress sample that deliberately over-represents guardrail-tripping
-//	           messages (safety, legal, discrimination, money, PII) and rare topical
-//	           clusters. Metrics here answer "does it break where breaking is expensive",
-//	           and are NOT a estimate of live performance.
+// Two strata, kept separate on purpose: `random` is a uniform sample and is the
+// only unbiased estimate of live performance; `targeted` over-represents
+// guardrail-tripping messages and rare clusters, and answers whether the system
+// breaks where breaking is expensive.
 //
 //	go run ./cmd/sample-golden -n-random 120 -n-targeted 80
 package main
@@ -27,15 +22,15 @@ import (
 	"github.com/adity1raut/hiver-support-agent/internal/textx"
 )
 
-// GoldenItem is one row of the golden set. Label fields are filled in by the
-// annotation pass (cmd/label-assist + cmd/review).
+// GoldenItem is one row of the golden set. Labels are filled in by cmd/label-assist
+// and cmd/review.
 type GoldenItem struct {
 	EpisodeID    string `json:"episode_id"`
 	Stratum      string `json:"stratum"`
 	StratumNote  string `json:"stratum_note"`
 	CreatedAt    string `json:"created_at"`
 	CustomerText string `json:"customer_text"`
-	DeltaReply   string `json:"delta_reply"` // what Delta actually sent (reference, not a label)
+	DeltaReply   string `json:"delta_reply"` // reference, not a label
 	NTurns       int    `json:"n_turns"`
 
 	GoldIntent  string `json:"gold_intent,omitempty"`
@@ -64,7 +59,7 @@ func main() {
 	}
 	pool := data.TemporalSplit(eps, *histFrac).EvalPool
 
-	// Drop rows that are not a usable support message at all.
+	// Drop rows that are not a usable support message.
 	var clean []data.Episode
 	seenText := map[string]bool{}
 	for _, e := range pool {
@@ -74,7 +69,7 @@ func main() {
 		}
 		key := strings.ToLower(strings.Join(textx.Tokenize(t), " "))
 		if key == "" || seenText[key] {
-			continue // near-duplicate blasts (same complaint copy-pasted)
+			continue // copy-pasted complaint blasts
 		}
 		seenText[key] = true
 		clean = append(clean, e)
@@ -96,7 +91,7 @@ func main() {
 	}
 
 	// ---- stratum 2: targeted stress ------------------------------------
-	// (a) one bucket per guardrail rule, (b) topical clusters for the rest.
+	// One bucket per guardrail rule, then topical clusters for the rest.
 	byRule := map[string][]int{}
 	for i, e := range clean {
 		if taken[i] {

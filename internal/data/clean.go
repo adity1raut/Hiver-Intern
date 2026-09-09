@@ -13,12 +13,8 @@ var (
 	reWS         = regexp.MustCompile(`\s+`)
 )
 
-// Clean normalises tweet text for modelling.
-//
-// We unescape HTML entities, replace URLs with a <url> placeholder and strip the
-// pseudonymised customer handles. We deliberately KEEP casing, punctuation and
-// emoji: the reply-quality rubric grades tone, and shouting/emoji are signal for
-// the escalation decision.
+// Clean normalises tweet text. Casing, punctuation and emoji are kept: the reply
+// rubric grades tone, and shouting is signal for the escalation decision.
 func Clean(s string) string {
 	s = html.UnescapeString(s)
 	s = reURL.ReplaceAllString(s, "<url>")

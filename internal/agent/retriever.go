@@ -7,8 +7,7 @@ import (
 	"github.com/adity1raut/hiver-support-agent/internal/textx"
 )
 
-// Precedent is one historical (customer message -> Delta reply) pair offered to
-// the drafting step as evidence of how the brand actually handles this.
+// Precedent is a historical customer message and the reply Delta sent.
 type Precedent struct {
 	EpisodeID  string  `json:"episode_id"`
 	Customer   string  `json:"customer"`
@@ -16,7 +15,7 @@ type Precedent struct {
 	Score      float64 `json:"score"`
 }
 
-// Retriever is a TF-IDF nearest-neighbour search over the HISTORY split only.
+// Retriever searches the history split for similar past messages.
 type Retriever struct {
 	vec   textx.Vectorizer
 	index *textx.Index
@@ -38,10 +37,9 @@ func NewRetriever(history []data.Episode) *Retriever {
 // Size is the number of indexed precedents.
 func (r *Retriever) Size() int { return len(r.eps) }
 
-// Retrieve returns up to k precedents for a message, de-duplicated by reply
-// template. Delta's agents reuse boilerplate heavily ("Please DM us..."), so
-// without de-duplication the top-k collapses onto one canned line and the
-// drafting step loses all the specific handling detail.
+// Retrieve returns up to k precedents, de-duplicated by reply template. Delta's
+// agents reuse boilerplate heavily, so without this the top-k collapses onto one
+// canned line and the drafting step loses every specific handling detail.
 func (r *Retriever) Retrieve(msg string, k int) []Precedent {
 	q := r.vec.Transform(msg)
 	hits := r.index.Search(q, k*8, nil)
@@ -68,8 +66,8 @@ func (r *Retriever) Retrieve(msg string, k int) []Precedent {
 	return out
 }
 
-// TopScore is the similarity of the single best precedent, used by the
-// escalation policy as a "do we have any precedent at all" signal.
+// TopScore is the best precedent's similarity, used by the policy as a
+// "is there any precedent at all" signal.
 func (r *Retriever) TopScore(msg string) float64 {
 	hits := r.index.Search(r.vec.Transform(msg), 1, nil)
 	if len(hits) == 0 {
@@ -78,8 +76,8 @@ func (r *Retriever) TopScore(msg string) float64 {
 	return hits[0].Score
 }
 
-// replySignature collapses a reply to its first few content words plus the
-// agent-initials suffix stripped, so template twins hash together.
+// replySignature collapses a reply to its opening content words so template
+// twins hash together.
 func replySignature(s string) string {
 	toks := textx.Tokenize(s)
 	if len(toks) > 6 {

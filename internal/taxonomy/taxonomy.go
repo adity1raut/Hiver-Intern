@@ -1,13 +1,9 @@
-// Package taxonomy holds the Delta intent set and the escalation policy.
+// Package taxonomy holds the Delta intent set.
 //
-// The intents were written by hand from the k-means exploration in
-// `cmd/discover-intents` (see reports/intent_clusters.json). The raw clustering
-// produced 30 groups, most of them near-duplicate flavours of "feedback"; the
-// merge down to 10 was a judgement call recorded in reports/DECISIONS.md.
-//
-// The organising principle is NOT topic similarity but *what the support desk
-// does next*. Two messages share an intent when they route to the same queue and
-// need the same information from the customer.
+// The intents were written by hand from the clustering in cmd/discover-intents.
+// The organising principle is what the desk does next, not topic similarity: two
+// messages share an intent when they route to the same queue and need the same
+// information from the customer.
 package taxonomy
 
 import "strings"
@@ -18,8 +14,7 @@ type Intent struct {
 	Description string
 	Includes    string
 	Excludes    string
-	// DefaultAction is the desk's baseline handling for this intent, before the
-	// per-message escalation rules are applied.
+	// DefaultAction is the baseline handling before per-message rules apply.
 	DefaultAction string
 }
 
@@ -133,9 +128,8 @@ func Get(name string) (Intent, bool) {
 	return Intent{}, false
 }
 
-// Normalise maps a model's free-text label onto the taxonomy, returning "other"
-// when it cannot be matched. Models occasionally answer with a near-miss such as
-// "flight delay" or "Baggage".
+// Normalise maps a model's free-text label onto the taxonomy, falling back to
+// "other". Models answer with near-misses like "flight delay" often enough to matter.
 func Normalise(s string) string {
 	s = strings.ToLower(strings.TrimSpace(s))
 	s = strings.ReplaceAll(s, " ", "_")
@@ -165,7 +159,7 @@ func Normalise(s string) string {
 	return "other"
 }
 
-// PromptBlock renders the taxonomy for use inside an LLM prompt.
+// PromptBlock renders the taxonomy for an LLM prompt.
 func PromptBlock() string {
 	var b strings.Builder
 	for _, in := range Intents {

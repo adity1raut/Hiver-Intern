@@ -2,8 +2,8 @@ package textx
 
 import "sort"
 
-// Index is an inverted index over sparse vectors for exact cosine top-k search.
-// With L2-normalised TF-IDF vectors the inner product IS the cosine similarity.
+// Index is an inverted index for exact cosine top-k search. The vectors are
+// L2-normalised, so the inner product is the cosine similarity.
 type Index struct {
 	postings map[int32][]posting
 	n        int
@@ -31,8 +31,7 @@ func NewIndex(vecs []Sparse) *Index {
 	return ix
 }
 
-// Search returns the top-k most cosine-similar documents to q.
-// `allow` (optional) filters candidate documents.
+// Search returns the top-k most similar documents to q. allow may be nil.
 func (ix *Index) Search(q Sparse, k int, allow func(int) bool) []Neighbour {
 	scores := make(map[int32]float64, 1024)
 	for i, term := range q.Idx {

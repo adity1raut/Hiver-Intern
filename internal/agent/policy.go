@@ -15,12 +15,9 @@ const (
 	RouteEscalate Route = "escalate"
 )
 
-// Rule is a deterministic escalation guardrail.
-//
-// Design note: the LLM proposes a route, but these rules can only ever push
-// *towards* escalation, never away from it. A support desk can survive an agent
-// that hands too much to a human; it cannot survive an agent that auto-replies to
-// a discrimination complaint. Every rule is a one-way ratchet.
+// Rule is a deterministic escalation guardrail. Rules only ever push towards
+// escalation, never away from it: a desk survives an agent that over-escalates,
+// not one that auto-replies to a discrimination complaint.
 type Rule struct {
 	Name   string
 	Reason string
@@ -31,7 +28,7 @@ func rule(name, reason, pattern string) Rule {
 	return Rule{Name: name, Reason: reason, re: regexp.MustCompile(`(?i)` + pattern)}
 }
 
-// HardRules are matched against the raw customer message.
+// HardRules match against the raw customer message.
 var HardRules = []Rule{
 	rule("safety_or_medical",
 		"mentions a safety, medical or emergency situation that a human must own",
@@ -68,8 +65,7 @@ type Signals struct {
 	ModelReason       string
 }
 
-// Thresholds tune the confidence-based guardrails. Values are set in
-// configs/config.yaml and justified in reports/DECISIONS.md.
+// Thresholds tune the confidence-based guardrails.
 type Thresholds struct {
 	MinIntentConfidence float64 `yaml:"min_intent_confidence"`
 	MinRetrievalScore   float64 `yaml:"min_retrieval_score"`
@@ -78,15 +74,15 @@ type Thresholds struct {
 // DefaultThresholds are the shipped values.
 var DefaultThresholds = Thresholds{MinIntentConfidence: 0.60, MinRetrievalScore: 0.12}
 
-// Verdict is the final routing decision with its stated cause.
+// Verdict is the routing decision and its stated cause.
 type Verdict struct {
 	Route      Route    `json:"route"`
 	Reason     string   `json:"reason"`
 	FiredRules []string `json:"fired_rules,omitempty"`
-	Overridden bool     `json:"overridden"` // true when a rule flipped the model's auto to escalate
+	Overridden bool     `json:"overridden"` // a rule flipped the model's auto to escalate
 }
 
-// Decide combines the model's proposed route with the deterministic guardrails.
+// Decide combines the model's proposed route with the guardrails.
 func Decide(msg string, s Signals, th Thresholds) Verdict {
 	var fired []string
 	var reasons []string

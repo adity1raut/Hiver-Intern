@@ -14,9 +14,7 @@ type Turn struct {
 	Text string `json:"text"`
 }
 
-// Episode is one support conversation rooted at an inbound customer tweet in
-// which the brand replied at least once. The agent acts on CustomerText; the
-// brand's first reply (BrandReply) is the historical action we compare against.
+// Episode is one thread rooted at an inbound customer tweet that the brand replied to.
 type Episode struct {
 	EpisodeID      string    `json:"episode_id"`
 	Brand          string    `json:"brand"`

@@ -9,7 +9,7 @@ import (
 	"github.com/adity1raut/hiver-support-agent/internal/taxonomy"
 )
 
-// Output is everything the agent decided about one incoming message.
+// Output is everything a system decided about one incoming message.
 type Output struct {
 	EpisodeID    string      `json:"episode_id"`
 	CustomerText string      `json:"customer_text"`
@@ -28,15 +28,15 @@ type Output struct {
 	Error        string      `json:"error,omitempty"`
 }
 
-// Agent is the full system: retrieve precedents, classify + draft + propose a
-// route in one grounded LLM call, then apply the deterministic guardrails.
+// Agent retrieves precedents, classifies, drafts and proposes a route in one LLM
+// call, then applies the guardrails.
 type Agent struct {
 	Client     llm.Client
 	Retriever  *Retriever
 	Model      string
 	K          int
 	Thresholds Thresholds
-	// NoRetrieval runs the ablation that drops precedents from the prompt.
+	// NoRetrieval is the ablation that drops precedents from the prompt.
 	NoRetrieval bool
 	Name        string
 }
@@ -69,8 +69,8 @@ func (a *Agent) Run(ctx context.Context, episodeID, msg string) Output {
 		precedents = a.Retriever.Retrieve(msg, a.K)
 		out.RetrievalTop = a.Retriever.TopScore(msg)
 	} else {
-		// The ablation still gets the retrieval score so the policy is comparable;
-		// only the *prompt* loses the precedents.
+		// The ablation still scores retrieval so the policy stays comparable; only
+		// the prompt loses the precedents.
 		out.RetrievalTop = a.Retriever.TopScore(msg)
 	}
 	out.Precedents = precedents

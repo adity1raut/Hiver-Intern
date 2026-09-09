@@ -6,9 +6,8 @@ import (
 	"sort"
 )
 
-// KMeans is spherical k-means (cosine similarity) over L2-normalised sparse
-// vectors with k-means++ seeding. Used only for *exploration* - to surface
-// candidate intent groupings from the data before a human writes the taxonomy.
+// KMeans is spherical k-means with k-means++ seeding. Exploration only: it
+// surfaces candidate intent groupings before a human writes the taxonomy.
 type KMeans struct {
 	K         int
 	MaxIter   int
@@ -55,7 +54,7 @@ func (km *KMeans) Fit(vecs []Sparse, dim int) {
 		}
 		for c := range sums {
 			if counts[c] == 0 {
-				sums[c] = km.Centroids[c] // keep an empty cluster where it was
+				sums[c] = km.Centroids[c]
 				continue
 			}
 			normalize(sums[c])

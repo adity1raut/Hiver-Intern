@@ -1,14 +1,11 @@
-// Package llm is a tiny provider-agnostic LLM client with an on-disk cache.
+// Package llm is a provider-agnostic LLM client with an on-disk cache.
 //
-// Two providers are supported:
+// Providers: gemini (GEMINI_API_KEY), anthropic (ANTHROPIC_API_KEY), cli (a local
+// `claude` binary), offline (cache only).
 //
-//	anthropic  - the Messages API, needs ANTHROPIC_API_KEY (what a reviewer would use)
-//	cli        - shells out to the local `claude` binary (what this repo was built with)
-//
-// Every completion is cached to a JSONL file keyed by a hash of the *request*
-// (model, system, prompt, sampling params) and deliberately NOT the provider, so
-// a cache produced by one provider is reused by the other. The cache is committed
-// to the repo: that is what makes `make repro` run offline in minutes with no key.
+// The cache key hashes the request but not the provider, so a cache built with one
+// provider is reused by another. It is committed, which is what lets `make repro`
+// run offline with no key.
 package llm
 
 import (
@@ -69,7 +66,7 @@ type Cached struct {
 	mu       sync.Mutex
 	mem      map[string]string
 	fh       *os.File
-	// Offline makes a cache miss an error instead of a live call.
+	// Offline turns a cache miss into an error instead of a live call.
 	Offline bool
 
 	Hits, Misses int
@@ -247,13 +244,14 @@ func (c *cliClient) Complete(ctx context.Context, r Request) (string, error) {
 
 // ---------------------------------------------------------------- construction
 
-// New builds a cached client. Provider is taken from LLM_PROVIDER, defaulting to
-// "anthropic" when ANTHROPIC_API_KEY is set and "cli" when the claude binary is
-// available. Provider "offline" serves the committed cache only.
+// New builds a cached client. The provider comes from LLM_PROVIDER, else is
+// inferred from whichever key or binary is present.
 func New(cachePath string) (*Cached, error) {
 	provider := os.Getenv("LLM_PROVIDER")
 	if provider == "" {
 		switch {
+		case os.Getenv("GEMINI_API_KEY") != "" || os.Getenv("GOOGLE_API_KEY") != "":
+			provider = "gemini"
 		case os.Getenv("ANTHROPIC_API_KEY") != "":
 			provider = "anthropic"
 		case findCLI() != "":
@@ -264,6 +262,15 @@ func New(cachePath string) (*Cached, error) {
 	}
 	var inner Client
 	switch provider {
+	case "gemini":
+		key := os.Getenv("GEMINI_API_KEY")
+		if key == "" {
+			key = os.Getenv("GOOGLE_API_KEY")
+		}
+		if key == "" {
+			return nil, errors.New("LLM_PROVIDER=gemini but GEMINI_API_KEY is empty")
+		}
+		inner = &geminiClient{key: key, http: &http.Client{Timeout: 5 * time.Minute}}
 	case "anthropic":
 		key := os.Getenv("ANTHROPIC_API_KEY")
 		if key == "" {

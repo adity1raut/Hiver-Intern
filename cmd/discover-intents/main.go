@@ -1,10 +1,7 @@
-// Command discover-intents proposes an intent taxonomy *from the data*.
+// Command discover-intents proposes an intent taxonomy from the data: TF-IDF plus
+// spherical k-means over historical messages, then an LLM names each cluster.
 //
-// It clusters historical customer messages with TF-IDF + spherical k-means, then
-// asks an LLM to name each cluster from its top terms and representative
-// messages. The output is a PROPOSAL: the shipped taxonomy in
-// internal/taxonomy/taxonomy.go was written by hand from this, merging and
-// dropping clusters (see reports/DECISIONS.md).
+// The output is a proposal. The shipped taxonomy was written by hand from it.
 //
 //	go run ./cmd/discover-intents -k 30
 package main
@@ -52,7 +49,7 @@ func main() {
 	sp := data.TemporalSplit(eps, *histFr)
 	log.Printf("history=%d evalpool=%d", len(sp.History), len(sp.EvalPool))
 
-	// Cluster a random sample of HISTORY only - the eval pool must stay unseen.
+	// History only: the eval pool must stay unseen.
 	rng := rand.New(rand.NewSource(*seed))
 	hist := append([]data.Episode(nil), sp.History...)
 	rng.Shuffle(len(hist), func(i, j int) { hist[i], hist[j] = hist[j], hist[i] })

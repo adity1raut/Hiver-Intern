@@ -14,8 +14,8 @@ import (
 
 var reFence = regexp.MustCompile("(?s)```(?:json)?\\s*(.*?)\\s*```")
 
-// ExtractJSON pulls the first JSON object out of a model response, tolerating
-// markdown fences and leading prose.
+// ExtractJSON pulls the first JSON object out of a response, tolerating markdown
+// fences and leading prose.
 func ExtractJSON(s string) (string, error) {
 	s = strings.TrimSpace(s)
 	if m := reFence.FindStringSubmatch(s); m != nil {
@@ -49,8 +49,8 @@ func ExtractJSON(s string) (string, error) {
 	return "", fmt.Errorf("unbalanced JSON in response: %s", truncate(s, 200))
 }
 
-// CompleteJSON completes r and unmarshals the response into v, retrying once
-// with a repair instruction if the model returns unparseable JSON.
+// CompleteJSON unmarshals the response into v, retrying once with a repair
+// instruction if the model returns unparseable JSON.
 func CompleteJSON(ctx context.Context, c Client, r Request, v any) error {
 	raw, err := c.Complete(ctx, r)
 	if err != nil {
@@ -76,7 +76,7 @@ func CompleteJSON(ctx context.Context, c Client, r Request, v any) error {
 }
 
 // Map runs fn over items with `workers` goroutines, preserving input order.
-// Errors are returned per item so one bad row cannot sink a whole run.
+// Errors are per item so one bad row cannot sink a whole run.
 func Map[In, Out any](items []In, workers int, label string, fn func(int, In) (Out, error)) ([]Out, []error) {
 	if workers < 1 {
 		workers = 1

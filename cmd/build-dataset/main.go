@@ -90,7 +90,7 @@ func readTweets(path string) (map[int64]*tweet, error) {
 			break
 		}
 		if err != nil {
-			continue // skip malformed lines rather than abort on a 3M-row messy csv
+			continue // a 3M-row messy csv has ragged rows; skip rather than abort
 		}
 		if len(rec) < 7 {
 			continue
@@ -118,8 +118,8 @@ func readTweets(path string) (map[int64]*tweet, error) {
 	return out, nil
 }
 
-// rootOf walks in_response_to_tweet_id upwards to the thread root, with cycle
-// and depth guards (the dataset contains a few self-referential rows).
+// rootOf walks in_response_to_tweet_id up to the thread root. The dataset
+// contains self-referential rows, hence the cycle and depth guards.
 func rootOf(tweets map[int64]*tweet, id int64, memo map[int64]int64) int64 {
 	if r, ok := memo[id]; ok {
 		return r
@@ -132,7 +132,7 @@ func rootOf(tweets map[int64]*tweet, id int64, memo map[int64]int64) int64 {
 			break
 		}
 		if _, ok := tweets[t.parent]; !ok {
-			break // dangling parent: treat current as root
+			break // dangling parent: treat current as the root
 		}
 		seen[cur] = true
 		cur = t.parent
@@ -165,7 +165,7 @@ func buildEpisodes(tweets map[int64]*tweet, brand string, minLen int) []data.Epi
 		})
 		first := turns[0]
 		if !first.inbound {
-			continue // brand-initiated thread, not an inbound support request
+			continue // brand-initiated, not an inbound support request
 		}
 		var reply *tweet
 		for _, t := range turns[1:] {
