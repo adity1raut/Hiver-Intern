@@ -1,0 +1,902 @@
+[
+  {
+    "cluster": 0,
+    "size": 444,
+    "top_terms": [
+      "thanks",
+      "upgrade",
+      "thank",
+      "first",
+      "class",
+      "first_class",
+      "love",
+      "way",
+      "really",
+      "free",
+      "airport",
+      "comfort"
+    ],
+    "examples": [
+      "Love this! Congratulations @Delta ! \u003curl\u003e",
+      "Thanks for the lift @delta - off to raise money for livethelist_nonprofit ❤️ \u003curl\u003e",
+      "@Delta can I bring a sealed 750 ml bottle of alcohol in my carry on?",
+      "Congrats @Delta for winning the 2017 #OpenText Elite CEO's Innovation Award. We celebrate your success. #OTEW \u003curl\u003e \u003curl\u003e",
+      "@Delta Buenos días Srs Delta podrían suministrarme un número de teléfono de servicio al cliente para Bogotá, los que aparecen en internet dicen no estar asignados, gracias.",
+      "#flydelta @delta #LAX #losangeles @ LAX - Los Angeles International Airport \u003curl\u003e",
+      "EYE L O V E @Delta! That's all #brand #love \u003curl\u003e",
+      "MY BAGS GOT TO IOWA BUT I DIDNT????? Thanks, @Delta \u003curl\u003e"
+    ],
+    "proposed_name": "appreciation_upgrades",
+    "rationale": "Customers expressing gratitude and praise for flight upgrades, first-class experiences, and premium service quality."
+  },
+  {
+    "cluster": 1,
+    "size": 243,
+    "top_terms": [
+      "great",
+      "atl",
+      "today",
+      "good",
+      "crew",
+      "flight",
+      "great_service",
+      "service",
+      "great_flight",
+      "job",
+      "morning",
+      "thank"
+    ],
+    "examples": [
+      "Dear @Delta Nothing puts a smile on my face better than landing in ATL and seeing #FlyDeltaJets as we taxi! #tcot",
+      "I have a knot in my throat. Turbulence was horrible to sit through. Great job to the pilots of this flight. Landed safely @Delta 🙌🏽🙌🏽 #phew",
+      "@Delta heads up-your flight from ATL - PIT that just landed had live tv that wasn't available for the flight. #bummer (studio was great btw)",
+      "Thanks @Delta. Catch you in ATL. 😊🙃 \u003curl\u003e",
+      "@Delta I’m usually a big fan of your flight attendants, but today’s ATL-FLL main cabin greeter couldn’t be more disengaged. #TrainingOpp",
+      "@Delta give TJM a raise....saved the day!",
+      "@delta; I want to #thankyou for great staff, planes and service! Truly #impressed these days (thx for the upgrade)",
+      "Improvement tip for @Delta . When I miss my connection \u0026 have to spend the night in ATL, I should be able to get my hotel voucher online."
+    ],
+    "proposed_name": "crew_service_feedback",
+    "rationale": "Customers are providing feedback about flight crew and service quality, predominantly expressing appreciation for excellent staff performance and professionalism, with occasional concerns about staff engagement."
+  },
+  {
+    "cluster": 2,
+    "size": 175,
+    "top_terms": [
+      "flying",
+      "first",
+      "i'm",
+      "time",
+      "i'm_flying",
+      "time_flying",
+      "first_time",
+      "love",
+      "today",
+      "love_flying",
+      "always",
+      "airlines"
+    ],
+    "examples": [
+      "This picture captures what living in #LA is like perfectly: palm trees, heavies, #LAX! 😍 A @Delta #Boeing #B777-200LR nicely framed! \u003curl\u003e",
+      "@Delta first time flying with you, and nothing but last minute delays, looks like I'll only be in Cali 2 days. :(",
+      "I LOVE FLYING @Delta because their employees are horrible people who don't believe me when I tell them I'm disabled 👍👍👍👍",
+      "@Delta Guess I'm flying Delta from now on exclusively. \u003curl\u003e",
+      "@Delta Please give the generous #SLC based crew #DL2278 an award. Never before have we felt so special flying on our anniversary! #13years \u003curl\u003e",
+      "@Delta flying to Japan Monday. Looks like super typhoon, how long notice will travel waiver be issued if there is direct hit forecasted?",
+      "@Delta any suggestions for French strike oct10? Flying Marseilles to Paris to Toronto",
+      "Flying @Delta again in March for Mardi Gras"
+    ],
+    "proposed_name": "flying_experience",
+    "rationale": "Customers sharing their Delta flight experiences, including service feedback (praise and complaints), travel logistics inquiries, and trip announcements, unified by discussion of actual or planned flying."
+  },
+  {
+    "cluster": 3,
+    "size": 297,
+    "top_terms": [
+      "gate",
+      "plane",
+      "agent",
+      "gate_agent",
+      "waiting",
+      "sitting",
+      "still",
+      "tarmac",
+      "minutes",
+      "flight",
+      "late",
+      "still_waiting"
+    ],
+    "examples": [
+      ".@Delta your flight attendants are always so amazing but your gate agents are rude as hell. Literally everywhere do better.",
+      "Delayed flight, and the nice @Delta gate agent is passing out snacks to all the passengers. Thank you!!",
+      "Idk if it’s just my luck but @Delta gate agents have been slacking lately.",
+      "All planes that arrived after \u0026 were around us have moved to gates \u0026 we're still waiting. So what's up @delta / who's lying?",
+      "Hey @Delta the male gate agent you have working DL1779 out of MSP has a LOVELY condescending attitude. #CanYouReadTheSarcasm",
+      "Been over 40 minutes since we’ve landed and I still don’t have my luggage.... come on @Delta 😭😭😭",
+      "Another bad @Delta Airlines experience. Stuck in Atlanta, seat given to standby. At gate 10 minutes prior plane sitting! Hello American Air",
+      "Next to last row. Gate checked the bag. I don’t care how fast this glorified aluminum can flies, @Delta can’t make miracles. Airplane mode."
+    ],
+    "proposed_name": "gate_service_quality",
+    "rationale": "Customers are primarily frustrated with gate agent professionalism (rudeness, condescending behavior) and operational delays (extended waiting times at gates/tarmac), indicating they want more courteous, efficient gate operations."
+  },
+  {
+    "cluster": 4,
+    "size": 145,
+    "top_terms": [
+      "delay",
+      "hour",
+      "hour_delay",
+      "flight",
+      "flight_delay",
+      "hours",
+      "now",
+      "connection",
+      "plane",
+      "delay_flight",
+      "hr",
+      "hr_delay"
+    ],
+    "examples": [
+      "@Delta any reason for the DL5893 delay?",
+      "Many thanks to Beverly in ATL for helping us through a brief delay with kindness and humor! @Delta #greatcustomerservice",
+      "@Delta @824 miserable situation again. DL 5448 delay after delay. Miserable communication. Family waiting",
+      "Oh @Delta 2nd mechanical delay in 2 weeks. 2nd time I’ve had to reschedule meetings with clients. Not thrilled.",
+      "@824 @Delta lack of delta response to traffic caused by bomb threat at LGA terminal B is ridiculous. Why didn't you delay flights?",
+      "wonder who schedules the pilots at @delta. Crusty the clown?? 2 hr delay, miss connecting flight cuz they didn't have experienced pilot!",
+      "PRAISE for @Delta 's app \u0026 #CustomerService via . Delay caused missed cnxn but timely communication will get me to #PuertoRico 2day",
+      "1/2 @Delta u no u need 2 de ice and u no it will delay 45 min. let the passengers no so we still have options!"
+    ],
+    "proposed_name": "delay_communication",
+    "rationale": "Customers report flight delays and request or praise timely communication about delay causes, duration, and impact on connections."
+  },
+  {
+    "cluster": 5,
+    "size": 95,
+    "top_terms": [
+      "yet",
+      "boarding",
+      "open",
+      "flight",
+      "started",
+      "haven't",
+      "supposed",
+      "hasn",
+      "response",
+      "early",
+      "make",
+      "still"
+    ],
+    "examples": [
+      "It did arrive at my airport this morning yet was put BACK on a plane and is now on its way to New York. I live in FL. Thanks @Delta",
+      "Hit 10 minute mark. On hold with @Delta to ask a simple question about my reservation. Have not spoken to a person yet. Really?!? \u003curl\u003e",
+      "@Delta thanks for yet another delayed flight. Losing a personal day from work and having to sleep in the terminal tonight. #deltaproblems",
+      "@DELTA also submitted an online complaint. No response yet.",
+      "Flight was supposed to take off already and hasn’t started boarding yet. Would be nice to hear a what’s happening announcement @Delta",
+      "It was a loss on @Delta who have not replied yet. I knew your reply would demonstrate you reply quickly to customers #CustomerService \u003curl\u003e",
+      "my @Delta flight is supposed to depart in 5 minutes but we haven't even started boarding. think we will leave on time?",
+      "@delta Supposed to depart in 9 minutes. No boarding yet. Your gate agents still expect an on time departure. Stop lying to your customers"
+    ],
+    "proposed_name": "delayed_flight",
+    "rationale": "Customers report flight and boarding delays, expressing frustration about lack of communication or status updates regarding the delay timeline."
+  },
+  {
+    "cluster": 6,
+    "size": 293,
+    "top_terms": [
+      "service",
+      "customer",
+      "customer_service",
+      "great_customer",
+      "thank",
+      "today",
+      "flight",
+      "great",
+      "best",
+      "experience",
+      "amazing",
+      "horrible"
+    ],
+    "examples": [
+      "@Delta Can some one help in this. Here is the best example how worst service lead to customer trust. \u003curl\u003e",
+      "Well done @Delta 👏🏽. Way to understand the power of #mobile and a seamless customer experience. #marketing #customerexperience \u003curl\u003e",
+      "@Delta wish I was flying with virgin known for good customer service. Apparently I can't even speak to delta \u003curl\u003e",
+      "@824 amazing customer service thank you Vanessa and Rose \u003curl\u003e",
+      "Thanks @delta baggage handlers! Everything was amazing with service… \u003curl\u003e",
+      "@Delta hands down the best customer service I have ever had at IAD. #missedmyflight #emotionalwreck",
+      "Shoutout to @Delta for rebooking my flight and great customer service as I try to get out of SFO.",
+      "@Delta 1 of 2: 2 hours on the phone w/ ur customer svc. Hung up on twice. End result \"sorry there's nothing else we can do...\""
+    ],
+    "proposed_name": "customer_service_feedback",
+    "rationale": "Customers are providing feedback on Delta's customer service quality, ranging from praise for exceptional support interactions to complaints about poor service and inaccessible support channels."
+  },
+  {
+    "cluster": 7,
+    "size": 197,
+    "top_terms": [
+      "fly",
+      "again",
+      "never",
+      "never_fly",
+      "ever",
+      "fly_again",
+      "never_flying",
+      "flying_again",
+      "experience",
+      "flying",
+      "flight",
+      "americanair"
+    ],
+    "examples": [
+      "@Delta you customer service sucks and all you do is lie, I'll never fly your airline again!",
+      "Time to fly again with @Delta #TravelSeason (@ Palm Beach International Airport - ) \u003curl\u003e",
+      "what gives @Delta -you won't refund our first class tickets but give us a credit we are never able to use. You are holding our $4000 ransom!",
+      "We never got to fly in the 747 but hope to get to fly with @delta soon on one of their flights on a 747",
+      "Tell me again why airlines ban dogs but allow crying babies? #myunpopularopinion @Delta",
+      "I think I'm ready to fly @Delta exclusively.",
+      "@Delta, I am trying to stay loyal. I pay extra to get Main cabin. You charge me again to get five rows closer. Crappy!",
+      "@AmericanAir told me they didn't care if they had my business I guess maybe I should get a refund and fly @Delta"
+    ],
+    "proposed_name": "repeat_flying_intent",
+    "rationale": "Customers expressing their willingness or unwillingness to fly with Delta again in the future, influenced by service quality, pricing, refunds, and loyalty concerns."
+  },
+  {
+    "cluster": 8,
+    "size": 90,
+    "top_terms": [
+      "guys",
+      "take",
+      "leave",
+      "flights",
+      "doesn",
+      "hey",
+      "love_guys",
+      "plane",
+      "day",
+      "first",
+      "trying",
+      "go"
+    ],
+    "examples": [
+      "Thank you @Delta you guys just made my day! \u003curl\u003e",
+      "@Delta you guys are the worst airline in history, get your shit together #deltaairlines",
+      "@Delta just awful to leave 75 people with no choices for 13 hours",
+      ".@Delta you guys are ridiculous, I have it pay $200 to use a $293 credit from a flight I had to cancel? I’ll just stick with @SouthwestAir!",
+      "@Delta did we forget to update this plane to Paris? 🙄thought you guys were finished. \u003curl\u003e",
+      "Hi there @Delta, I am trying to find your answer to this question, I thought I better tweet it instead... What is your policy on ESA? I have a flight coming up with you guys!",
+      "@Delta are you guys buying an Airbus 380 anytime soon? I want to go to Europe this winter but I was hoping fly out in that lol",
+      "As an executive Assistant, I will NEVER book company flights through you guys again! @Delta"
+    ],
+    "proposed_name": "direct_feedback",
+    "rationale": "Customers directly contacting Delta on social media to provide feedback (positive or negative) about service, pricing, and operations, or to ask questions about policies and products."
+  },
+  {
+    "cluster": 9,
+    "size": 218,
+    "top_terms": [
+      "flights",
+      "delays",
+      "last",
+      "time",
+      "worst",
+      "flight",
+      "today",
+      "hey",
+      "thanks",
+      "getting",
+      "both",
+      "fi"
+    ],
+    "examples": [
+      "@Delta this is my 2nd international flight/mo where pilot informs us, “no Wi-Fi”.These r long flights \u0026 we pay ahead of tm so do better pls!",
+      "Hey, @Delta - HUGE shoutout to the flight crew of DL4475 from PSC-\u003eMSP this morning! They were AMAZING when I freaked out (anxiety attack) \u0026 almost had to miss my flights. Shelly \u0026 Yvonne deserve a medal! #THATwasservice!",
+      "Freak Seattle ❄️ caused delays but ✈️ taking off now for 2 weeks of packed #fintech #payment and #blockchain mtgs in SG, HK, SYD \u0026 MEL! 👊🏻 \u003curl\u003e",
+      "@824 here's an idea...stop overbooking your flights without telling people and fucking them over.",
+      "No hitch in the honeymoon by the time we got to ATL then @Delta remembered they were Delta and hit us with the delays.",
+      "Last minute #eliteuprgade, ah @Delta you always make me so happy #businessclassisthebestclass#medallionftw #freeupradesftw #watchoutmiami",
+      "@Delta Not happy with how I was treated in last nights tricky game",
+      "@Delta Does the 24 hour cancellation apply to flights booked on \u003curl\u003e originating in Canada, or is it only for USA?"
+    ],
+    "proposed_name": "flight_service_feedback",
+    "rationale": "Customers are expressing both positive and negative feedback about their flight service experiences, including operational issues (delays, Wi-Fi, overbooking) and crew service quality."
+  },
+  {
+    "cluster": 10,
+    "size": 181,
+    "top_terms": [
+      "one",
+      "air",
+      "best",
+      "flight",
+      "lines",
+      "person",
+      "counter",
+      "two",
+      "air_lines",
+      "bags",
+      "i'm",
+      "cancer"
+    ],
+    "examples": [
+      "at the @Delta check in counter in Ottawa. All other counters are staffed but this one. Completely empty. 10+ people in queue. Confused!",
+      "On next @Delta plane - waited on one new FA because last one worked too many days. We should've been at LGA already.",
+      "@Delta I get delayedflights but the way you handled this one was awful, enough to were I will fly anything but delta, thanks for bad service",
+      "@Delta to get two people checked in. They were both working on one person at a time. This caused me to miss my flight",
+      "@Delta 2746 pilot is one of the best, very professional and customer focused, only thing good about this flight",
+      "@Delta I have two comment/complaint forms sent to Delta. The most recent one is serious and I would like it to be looked at soon.",
+      "@Delta You need to standardize your seatbelt lengths. All my other flights fit. Not this one. \u003curl\u003e",
+      "Wow! 3 of 4 @Delta flights were EARLY arrivals on my trip. 😃😃😃😃😃Only delayed one was due to Edmonton not prepped to deice. Silly Canucks."
+    ],
+    "proposed_name": "staffing_and_efficiency",
+    "rationale": "Customers report understaffed check-in counters and inefficient service processes causing delays and missed flights."
+  },
+  {
+    "cluster": 11,
+    "size": 142,
+    "top_terms": [
+      "travel",
+      "made",
+      "thanks",
+      "diamond",
+      "flight",
+      "thank",
+      "status",
+      "diamond_status",
+      "air_travel",
+      "finally",
+      "ride",
+      "day"
+    ],
+    "examples": [
+      "Shout out to for sending us a gift for our anniversary! #slh #venusetfleur #slhinvited #travel \u003curl\u003e",
+      "@Delta rewarded me for voluntarily checking my bag by letting me board first. It was a little thing, but it really made my day 😊👍🏾",
+      "@Delta I got a travel voucher for my trip to Puerto Rico... what are my options with the voucher?",
+      "Finally closing in on @Delta #Diamond status! /// But how do I get the exclusive #🦄 #Delta360 program?",
+      "@Delta Vouchers are good for one year, but does the travel have to occur w/in that year? I'm hoping that I can book inside the year for travel that occurs beyond the year. 😀",
+      "This month marks six years of professional travel. Special thanks to @Delta",
+      "Thanks to the helpful @Delta agent at MSP gate G13 who just made it possible for me and hubby to sit together! #lastminuteflight #travel",
+      "That time I got to see my @Delta buddy taxi and park the plane in !! #Delta #Travel #Pilot \u003curl\u003e"
+    ],
+    "proposed_name": "loyalty_appreciation",
+    "rationale": "Customers express gratitude for Delta's loyalty rewards, Diamond status recognition, and service quality, while asking about voucher terms and exclusive program benefits."
+  },
+  {
+    "cluster": 12,
+    "size": 168,
+    "top_terms": [
+      "trip",
+      "airline",
+      "use",
+      "miles",
+      "round_trip",
+      "round",
+      "worst",
+      "favorite_airline",
+      "booking",
+      "flight",
+      "worst_airline",
+      "favorite"
+    ],
+    "examples": [
+      "Today has reminded me why @Delta is and will remain my choice airline. @AmericanAir is absolute garbage.",
+      "@824 I thought skypriority or gold got to use multi airline club at YYZ? They say no, must pay.",
+      "Thank you, @Delta for getting my sons safely to their grandfather's homegoing. I wouldn't trust any other airline with them! 🙏🏽 \u003curl\u003e",
+      "@Delta hi. I want to add my tickets for my round trip flight next Friday to my Apple Passbook but I’m unable to this time.",
+      "Your airline sucks @Delta canceling your flight no warning! Who cares if service men have to get back on base ?",
+      "How does an airline get volunteers to take a later flight and then force them on the plane while simultaneously stranding others @Delta?",
+      "@Delta why does it take so long to use a voucher? Going on 30 minutes and have to talk to 5 different departments. #TheWorst \u003curl\u003e",
+      "First trip with both kiddos to #NYC a success! Thanks @delta...and iPad...and lots of snacks.… \u003curl\u003e"
+    ],
+    "proposed_name": "mixed",
+    "rationale": "Cluster contains incoherent customer intents including loyalty expression, booking feature requests (Passbook integration), reward redemption questions, service complaints (cancellations, overbooking), and satisfaction acknowledgments—no single underlying customer want."
+  },
+  {
+    "cluster": 13,
+    "size": 153,
+    "top_terms": [
+      "change",
+      "change_flight",
+      "flight",
+      "trying_change",
+      "name",
+      "help",
+      "need_change",
+      "trying",
+      "need",
+      "flight_change",
+      "hold",
+      "website"
+    ],
+    "examples": [
+      "Trying to change a flight for Thanksgiving, but website is cropped at pay window... thanks a lot @Delta",
+      "Hey @delta why won't your website let me change my flight after weather advisory/waiver? Keep getting errors. Shouldn't your site handle it?",
+      "Quiet morning at the @Delta gates at . I’m sure this will change shortly. \u003curl\u003e",
+      "@Delta I'd like to book a oneway ticket Beijing -\u003e Detroit but your website is displaying fares in Chinese Yuan only. How can I change to $?",
+      "Trying to change flight w/ @Delta - was so close to being done and poof💨*call dropped* No call back. Now in line waiting for another call😭😤😫",
+      ".@Delta Why do you change my assigned seats? You moved me 2 rows back on 1 flight \u0026 a row back on the other. Not full flights, plenty of other seats, many together. I've now screenshot my seats. Unless there's an upgrade available, I'd appreciate them staying the same. Thanks!",
+      "Hey @Delta your site said to call, I called and they sent me to the site- all I want to do is change my last name",
+      "@Delta 4 times I called to change an award reservation, four times I got hung up on. Last rep was more than efficient cancelling it, though"
+    ],
+    "proposed_name": "change_flight",
+    "rationale": "Customers are attempting to modify their existing flight bookings, whether changing the flight itself, passenger names, or other booking details."
+  },
+  {
+    "cluster": 14,
+    "size": 232,
+    "top_terms": [
+      "please",
+      "help",
+      "please_help",
+      "flight",
+      "824",
+      "dm",
+      "help_please",
+      "could",
+      "today",
+      "fix",
+      "case",
+      "issues"
+    ],
+    "examples": [
+      "@delta has literally cost me thousands of dollars of loss by messing up my baggage. 4-6 weeks for any help...I retract my previous tweet.",
+      "Please hold @Delta #4593 to Minot- mother-IL is stuck on plane that just landed and is connecting to see her daughter give birth tomorrow!",
+      "@Delta can someone help ??",
+      "Hey @Delta, TSA broke my suitcase’s built in lock when I flew with you yesterday. Can you please advise me who to contact about this? Thx.",
+      "@Delta please hold 876 to IND! You were latw getting me to DTW! I'm coming!!!",
+      "@Delta can you help me with my flight tonight?",
+      "@824 please give an update on flight #6081. This is awful",
+      "@Delta offered 8k hush points to my 1M Miler Dad after being stuck in LGA for 26hr bc of cancelations. Cost him a business meeting #fail"
+    ],
+    "proposed_name": "urgent_assistance",
+    "rationale": "Customers are requesting urgent assistance with time-sensitive flight, baggage, and service issues."
+  },
+  {
+    "cluster": 15,
+    "size": 252,
+    "top_terms": [
+      "seat",
+      "comfort",
+      "middle",
+      "flight",
+      "middle_seat",
+      "upgrade",
+      "window",
+      "row",
+      "window_seat",
+      "paid",
+      "back",
+      "comfort_seat"
+    ],
+    "examples": [
+      "@Delta extremely pissed off about this when your crew should make sure people put laptops under their seat.",
+      "When you board your @Delta flight and there is a used dirty straw and old altoid tin on your seat 💺😒 #yuck \u003curl\u003e",
+      "@Delta I paid for ‘Delta Comfort” and got a seat that is 3/4 the size of that next to me. My purse barely fits in the space under the seat.",
+      "Raining on board @Delta flight? Sitting in aisle seat waiting for take off \u0026 water starts dripping from overhead luggage bin on my head...",
+      "Why/how do you over sell a flight? Huh, @Delta? I paid for a seat, I'm confused why it's issues now.",
+      "@Delta I've never done a mileage upgrade before. Is the seat map always accurate for availability? Looking @ DL1701 on Saturday Atl to Las.",
+      "So now @AmericanAir had my wife and 2 yr old a seat on plane. Then 20 min kicked them off the plane. #WTF \u003curl\u003e",
+      "@Delta as a passenger in the seat 28E currently aloft, even though I'm in the middle, the \"Biscoff\" cookies make it worth it! 👍🏼"
+    ],
+    "proposed_name": "seat_comfort",
+    "rationale": "Customers want comfortable, clean seats and expect paid upgrades (like Delta Comfort) to deliver the promised comfort level; complaints center on cramped middle seats, small seat sizes, dirty conditions, and unmet premium seat expectations."
+  },
+  {
+    "cluster": 16,
+    "size": 141,
+    "top_terms": [
+      "sky",
+      "club",
+      "sky_club",
+      "priority",
+      "sky_priority",
+      "sky_miles",
+      "miles",
+      "i'm_sky",
+      "well",
+      "i'm",
+      "mi",
+      "lounge"
+    ],
+    "examples": [
+      "Filling up (at @Delta Sky Club in Atlanta, GA) \u003curl\u003e",
+      "well @Delta, you failed me.",
+      ".@Delta, will my wife and my z fare first class ticket (DTW -\u003e MCO) grant is sky club access? (SkyClub members holding gold+ AMEX)",
+      "@Delta , sky club is now a joke. Packed, jammed beyond belief. So much for escape to work",
+      "@delta how come my recent LGW-\u003e LAS and LAX -\u003e LHR flights weren’t eligible for sky miles! That’s a lot of missed miles!",
+      "@DELTA I was denied sky priority boarding - I paid for that and I might miss my flight !!!!!",
+      "@Delta Waive the transfer fee 4 sky miles during this time of urgency. I have friends offering sky miles to help me fly my family out of PR.",
+      "Excited for mini vacay in NoLa with guncles and LOML! LGA-ATL-LFT then MSY (at @Delta Sky Club in East Elmhurst, NY) \u003curl\u003e"
+    ],
+    "proposed_name": "sky_loyalty_issues",
+    "rationale": "Customers report problems with Delta's Sky loyalty program benefits—difficulty accessing Sky Club, missing Sky Miles earnings, denied Sky Priority boarding, and perceived quality degradation—indicating they expect these paid/earned perks to work reliably."
+  },
+  {
+    "cluster": 17,
+    "size": 169,
+    "top_terms": [
+      "home",
+      "flight_home",
+      "flight",
+      "thanks",
+      "happy",
+      "thank",
+      "getting",
+      "back_home",
+      "back",
+      "getting_home",
+      "go_home",
+      "atl"
+    ],
+    "examples": [
+      "Coming in for a landing! @Delta #NYC Feels great to be home! \u003curl\u003e",
+      "Huge shout out to *ADB @Delta for getting me home to my wife’s mother’s funeral. Thanks a bunch!!",
+      "Just got home. Ahhhhh. I have to say that 17F on @Delta 737 800 may be the most uncomfortable seat I've ever been in. I'm in pain",
+      "A nice little touch for the long flight home! @Delta #deltaone #layflatseats \u003curl\u003e",
+      "Thanks to @Delta my flight home to Atlanta from El Paso has been delayed so I’m going to miss a very important event tonight 😡😡😡😡#pissed \u003curl\u003e",
+      "Time to head home and I have the best seat on the plane 😌 @Delta #TreatYoSelfDay \u003curl\u003e",
+      "Hey @Delta... thanks for charging me a $75 change fee and because of mechanical problems, I probably won't be home before my original flight",
+      "I haven’t been home for more than 72 hours in a month and a half but I looooove reading the @Delta sky magazines"
+    ],
+    "proposed_name": "getting_home",
+    "rationale": "Customers discussing their experience traveling home via Delta flights, expressing both satisfaction with service/comfort and frustration with delays, fees, and seat quality that affect their ability to arrive home on time for important occasions."
+  },
+  {
+    "cluster": 18,
+    "size": 193,
+    "top_terms": [
+      "wait",
+      "call",
+      "back",
+      "call_back",
+      "hours",
+      "can't",
+      "time",
+      "hour",
+      "hour_wait",
+      "next",
+      "line",
+      "two"
+    ],
+    "examples": [
+      "@Delta just to advise smoke seen from Apu N805NW on push back seatac",
+      "Can't wait to test out the perks on our honeymoon trip!! @Delta \u003curl\u003e",
+      "@Delta you don’t have a mechanic on site in Albany so we have to wait 3 hours for another flight..? Is this fair?",
+      "My fav thing is sitting on MSP runway for 36 min w no update. Can't wait to sprint to my next gate. Thanks @Delta #firstworldproblems",
+      "@Delta can I get assistance adding infant in arms to an existing reservation? Not being given callback option via phone and wait is 2+ hrs.",
+      "Stranded in Canada for the next 4 hours! Thanks @Delta",
+      "when @Delta finally takes u off hold, transfers u to a disconnected number then hangs up on.. another hour wait here we go! 😡 fix my flight!",
+      "@Delta Hi there! Is there a number I can call to change my flight that won't tell me there is a two-hour wait time to be on hold? Thanks!"
+    ],
+    "proposed_name": "reduce_phone_wait",
+    "rationale": "Customers are frustrated by excessive hold times when calling customer service and want shorter wait periods or callback options as alternatives to waiting on hold."
+  },
+  {
+    "cluster": 19,
+    "size": 508,
+    "top_terms": [
+      "flight",
+      "flight_attendant",
+      "attendant",
+      "attendants",
+      "flight_attendants",
+      "wifi",
+      "thanks",
+      "tomorrow",
+      "flight_tomorrow",
+      "plane",
+      "morning",
+      "today"
+    ],
+    "examples": [
+      "@Delta booked a flight through delta app and at first it said it could not book my flight when it did and charged my card. Can I be refunded",
+      "@DELTA how do I get the miles from a flight in March 2017?",
+      "@824 disappointed in the flight. The catering wasn’t properly refilled and very little empathy from the flight crew",
+      "@Delta what’s up with all these rude flight attendants?!",
+      "Was literally in last row and flight attendant moved all four of us to Comfort+ \"so you can have a little more leg room.\" Well played @Delta. Well played. \u003curl\u003e",
+      "@Delta Can you help me with a flight I have tomorrow?",
+      "@Delta I left my (beloved) jacket on Flight 1833 yesterday (SLC to CVG). Who can I contact?",
+      "@Delta at Lisbon airport: I’m confused about the team meeting going on while there are 15 people in line ready to sprint for their flight. \u003curl\u003e"
+    ],
+    "proposed_name": "flight_assistance_request",
+    "rationale": "Customers seek support for diverse flight-related issues including booking problems, lost items, flight attendant service quality, loyalty program questions, and help with upcoming flights."
+  },
+  {
+    "cluster": 20,
+    "size": 159,
+    "top_terms": [
+      "now",
+      "skyclub",
+      "right",
+      "right_now",
+      "nice",
+      "flight",
+      "worse",
+      "atl",
+      "morning",
+      "work",
+      "free_messaging",
+      "like"
+    ],
+    "examples": [
+      "Thank you @Delta #skyclub for being so helpful and solicitous on a crazy day ! \u003curl\u003e",
+      "@Delta why can't I book a ticket online or on app right now? Using sky miles.",
+      "When you have only 7 minutes in the @Delta Seattle SkyClub, head for the important things! #no280characters \u003curl\u003e",
+      "#Nice #smoothflight CRJ200✈ ORF to DTW @Delta #Kudos for offering #glutenfree 👍👍",
+      "Flew on a shiny A320 ALT ORF #Nice @Delta #greaflight , but total #failure no #glutenfree snacks available😞 \u003curl\u003e",
+      "Corey Lewandowski, apparently on Planet B: \"What we should be focusing on is the continued lies of the Clinton administration\" \u003curl\u003e",
+      "@Delta and now we're waiting to board because a crew member is missing??!? ARE YOU KIDDING!?!? What kind of operation are you running?!",
+      "So @Delta should I just like live in LA now? Are we never going to board? Haha. 😒"
+    ],
+    "proposed_name": "service_feedback",
+    "rationale": "Customers are expressing real-time feedback on various Delta service experiences—both positive praise for helpful staff and smooth flights, and complaints about operational delays, booking system failures, and missing amenities—indicating a general intent to report service quality across multiple touchpoints."
+  },
+  {
+    "cluster": 21,
+    "size": 194,
+    "top_terms": [
+      "hold",
+      "trying",
+      "card",
+      "time",
+      "hold_time",
+      "credit",
+      "hour",
+      "phone",
+      "baggage",
+      "minutes",
+      "online",
+      "flight"
+    ],
+    "examples": [
+      "@Delta hi - am able to pay using both miles and money? Wanted to confirm before transferring Amex points to Delta. Thanks",
+      "2/2 @Delta I have spent hours on hold w/out reaching anyone who can make decisions. I have proof that all trips are mine. Pls unlock acct",
+      "@Delta 1hr hold time to make changes to a reservation??",
+      "Honestly trying to figure out the benefits of having #Gold status with @Delta. Can't even get on a later flight... #SMH",
+      "1 hour on hold with Delta reservations. Come on @delta there has got to be a better way.",
+      "Shout outs to @Delta \u0026 @VirginAmerica for getting me from Greece to San Francisco w/o error! ❤️✈️✨💃🏼 #crewlife",
+      "@Delta just got hung up on by Silver line. Trying to see what is the last FLT that lands at IAH/HOU OCT-25-2017...",
+      "@Delta I’m trying to make a reservation but keep showing an error message #101727R"
+    ],
+    "proposed_name": "reach_customer_support",
+    "rationale": "Customers are unable to effectively reach or access customer service representatives due to excessive hold times, disconnections, and system barriers that prevent them from completing transactions and resolving inquiries."
+  },
+  {
+    "cluster": 22,
+    "size": 74,
+    "top_terms": [
+      "making",
+      "thanks_making",
+      "inflight",
+      "thanks",
+      "thank",
+      "experience",
+      "thank_making",
+      "crew",
+      "captain",
+      "flight",
+      "airport",
+      "much"
+    ],
+    "examples": [
+      "@Delta thank you for putting airport maps and directions btw gates in your app. It totally reduced my anxiety about making my connection.",
+      "Well, this sure makes for an easy connection. It seems I always get them at the least necessary times though... #firstworldproblems @Delta \u003curl\u003e",
+      "@Delta inflight entertainment Isn’t ADA compliment - I could not turn closed caption on any inflight entertainment?!?",
+      "@Delta Mathieu at ticket counter at atl airport F concourse is amazing!! Thank you so much for making my experience so easy.",
+      "@Delta no captioning for inflight entertainment. It is 2017. No excuse. #DeafTraveler #DeafInTheAir \u003curl\u003e",
+      "I flew @Delta today and the crew of flight DL1438 was so friendly and helpful—thanks for making a long trip comfortable!",
+      "hey @Delta you suck. making my handicapped grandma and aunt wait 4 extra hours and then giving them new seats in the last row. you're fucked",
+      "Thanks @Delta for making it easy to move my flight up 2day. Pilot on flight 455 JFK to Austin did gr8 with all the turbulence."
+    ],
+    "proposed_name": "flight_experience",
+    "rationale": "Customers express both appreciation for helpful staff and smooth experiences, and complaints about accessibility and treatment issues, reflecting their focus on overall flight experience quality."
+  },
+  {
+    "cluster": 23,
+    "size": 154,
+    "top_terms": [
+      "lost",
+      "us",
+      "luggage",
+      "care",
+      "taking",
+      "thank",
+      "flight",
+      "helping",
+      "care_us",
+      "bag",
+      "taking_care",
+      "helping_us"
+    ],
+    "examples": [
+      "@delta who is going to pay to rebook us? Not our fault",
+      "@Delta was promised a refund and never got it. Delta agent was rude, repetitive and you now lost a loyal customer",
+      ".@Delta everyone agrees that i should get proper compensation for lost wheelchair for 2 weeks. Vacation ruined. Your fault",
+      "Thanks so much to our friends at @Delta for helping us celebrate Halloween yesterday at our Harvest Fest! We had a blast 👻🎃 \u003curl\u003e",
+      "@Delta very very little insight from your team about an oversold flight to LA out of Minneapolis. Many of us have no idea if we have seats 😑",
+      "Many thanks to @Delta for helping us get luggage to Manaus. Our Amazon adventure can begin!",
+      "@Delta I think I left my phone on a flight last night... how do I recover my lost phone?",
+      "@Delta @824 I’ve talked to 3 people. 1 of them live and still can’t manage to get any direction on how to find my lost coat help!!!"
+    ],
+    "proposed_name": "lost_baggage_claim",
+    "rationale": "Customers are reporting lost luggage, bags, and personal items during flights and seeking either help recovering them or compensation for their loss."
+  },
+  {
+    "cluster": 24,
+    "size": 102,
+    "top_terms": [
+      "atlanta",
+      "sunrise",
+      "flight",
+      "atlanta_ga",
+      "flight_atlanta",
+      "ga",
+      "headquarters_atlanta",
+      "headquarters",
+      "world_headquarters",
+      "tonight",
+      "thank",
+      "i'm"
+    ],
+    "examples": [
+      "#Myview from my window flying from Des Moines to Atlanta aboard @delta. #FlyOverStates #travels… \u003curl\u003e",
+      "#rainyday (at @Delta World Headquarters in Atlanta, GA) \u003curl\u003e",
+      "Beautiful night to fly @delta #keepclimbing#flyhigh#✈️ @ Hartsfield-Jackson Atlanta… \u003curl\u003e",
+      "The @Delta crews in Atlanta are hostile and worthless. No info on an already crazy delayed flight. Not helpful at all.",
+      "São Paulo not looking good tonight. (at @Delta Flight DL 105 (ATL-GRU) in Atlanta, GA) \u003curl\u003e",
+      "“If I can imagine it so—imagining must matter \u0026 that’s why I’ve gotta go…“ Tunes by , powered flight by @Delta, sunrise by Light. \u003curl\u003e",
+      "@Delta with engine issues on flight DL1616 my connection in Atlanta is looking hairy. Any suggestions on getting to Boston?",
+      "San Jose bound #tedsockie. Will miss you Seattle and Portland. Make it a smooth ride @Delta ✈️ #FollowThePath #RonR... #NoLetUp!👊🏻 \u003curl\u003e"
+    ],
+    "proposed_name": "atlanta_flight_updates",
+    "rationale": "Customers primarily want to share and discuss their travel experiences through Atlanta as Delta's major hub, with some seeking operational assistance or reporting service issues."
+  },
+  {
+    "cluster": 25,
+    "size": 240,
+    "top_terms": [
+      "check",
+      "app",
+      "bag",
+      "check_bag",
+      "boarding",
+      "flight",
+      "boarding_pass",
+      "pass",
+      "tsa",
+      "trying_check",
+      "mobile",
+      "check_flight"
+    ],
+    "examples": [
+      "@Delta Why, after my flight was cancelled, am I being told I can't check in on new flight, that I have to do so at airport?",
+      "@delta in the ATL airport had fellow traveler having issues with accessing their Delta App just to find out that I can't access mine either",
+      "@Delta is the app experiencing known errors at the moment?",
+      "Silly me. I forgot @delta once wouldnt issue a boarding pass to Incheon bc I didn’t have a visa to NORTH KOREA. Expectations are too high.",
+      "I can't believe the girl at the @Delta check-in counter in San Juan had the nerve to tell my husband \"we don't cancel flights!\" Umm, you cancelled ours originally scheduled for yesterday. 322. Look it up. Doesn't exist BECAUSE YOU CANCELLED IT DELTA. #nobueno #Dumbassery",
+      "Well, my flight to Mexico got canceled and rebooked to 12:20 AM. I found out from an email telling me to check in. Thanks, @Delta!",
+      "@824 - is only way to watch in-flight entertainment on my iOS device thru the Gogo entertainment app \u0026 not thru the Delta app?",
+      "@Delta nothing like urgent need \u0026 trying to check on standby status opportunity \u0026 told it’s for rev/elite customers. I’m both. RDU😣"
+    ],
+    "proposed_name": "checkin_issues",
+    "rationale": "Customers are unable to complete check-in for their flights through the app, online portal, or airport counters and seek resolution to proceed with travel."
+  },
+  {
+    "cluster": 26,
+    "size": 245,
+    "top_terms": [
+      "delayed",
+      "flight",
+      "flight_delayed",
+      "hours",
+      "delayed_hours",
+      "delayed_flight",
+      "now",
+      "connection",
+      "hrs",
+      "flights",
+      "thanks",
+      "plane"
+    ],
+    "examples": [
+      "So @Delta just delayed my flight back to ORL 🙄",
+      "Despite this am problem, kudos to @Delta cust servc. Delayed. Free h2o \u0026 snacks. Flght att held the baby for me on an earlier flight. Ty",
+      "@824 flight 5447 has been a disaster. Lights didn’t work on the plane and I’m over 5 hours delayed. #Unacceptable",
+      "@Delta JFK-slc 11:25am flight delayed. Pilot did a great job explaining why we were delayed. Updating passengers is key! Thx! :)",
+      "@Delta flight delayed again. Why are my flights always delayed. Please confirm you will reach out with details",
+      "@824 my flight to #Bangor from #JFK tonight got delayed 3 hours. Any idea why?",
+      "@delta DL4762 delayed over 5 1/2 hours. SKD 0613, pushed back at 1152. Skywest issues but perception is everything #yournameonplane",
+      "@DELTA is there any chance at all that DL63 will be cancelled today? It keeps getting delayed."
+    ],
+    "proposed_name": "flight_delay_complaint",
+    "rationale": "Customers are reporting delayed flights and seeking explanation, status updates, or acknowledgment of the delay."
+  },
+  {
+    "cluster": 27,
+    "size": 141,
+    "top_terms": [
+      "jfk",
+      "flight",
+      "lax",
+      "flight_jfk",
+      "hi",
+      "cancelled",
+      "sfo",
+      "jfk_flight",
+      "t4",
+      "today",
+      "help",
+      "i'm"
+    ],
+    "examples": [
+      "@Delta been stuck at JFK for nearly 12 hours after you cancelled my flight I've walked every inch of terminal 2 any ideas to pass the time?",
+      "Dear @delta WHY is it $100 cheaper to fly into \u0026 out of LGA from RDU than JFK Dec. 13 \u0026 Jan 4?! Dammit I'm flying JFK-FRA roundtrip! *Cries*",
+      "JFK-MIA, @Delta (DL2175): Checked in via the non-mobile Delta website. Free seat change. Huzzah.",
+      "@Delta, passenger beside me in 1C SEA-JFK got $1000 voucher from the GA since there's no wifi (or other flights) available. Where's mine?",
+      "Eastern Lake Erie shoreline from Barcelona to Buffalo aboard @Delta from DEN to JFK. \u003curl\u003e",
+      "@delta I left my iPad on my flight into JFK. Can you help me get it back?",
+      "Delta touching down in Malaga from New York JFK @Delta \u003curl\u003e",
+      "@delta booked delta flight NY jfk ➡️ Syd aus via virgin Australia. Booking ref (EFRJNR) won’t let me check in online.Cant reach u on 📞 help?"
+    ],
+    "proposed_name": "flight_disruption_resolution",
+    "rationale": "Customers are seeking support and resolution for flight-related disruptions at JFK, including cancellations, delays, lost items, and check-in problems."
+  },
+  {
+    "cluster": 28,
+    "size": 138,
+    "top_terms": [
+      "number",
+      "skymiles",
+      "email",
+      "come",
+      "promotion",
+      "miles",
+      "eligible",
+      "add",
+      "ticket",
+      "find",
+      "call",
+      "book"
+    ],
+    "examples": [
+      "@Delta I'm getting a bit tired of certain trips not being eligible for SkyMiles. It's not my fault limited tix avail at time of booking.",
+      "I couldn’t find a safety pin for my daughters Poppy costume, so I just used Delta wings instead! #frequentflyer #delta @delta",
+      "Somehow @Delta has flown its way into Eli's number tracing homework. \u003curl\u003e",
+      "I voted 's Cody White as @Delta Player of Game vs. Indiana: \u003curl\u003e",
+      "Come on @Delta answer my email!",
+      "@Delta for the planes that have live television, is CBS a channel option?",
+      "@Delta how do I find my frequent flyer number? I haven’t flown anywhere in 5 years and I can’t seem to find it.",
+      "@Delta how do I send kudos for an employee who went above and beyond? My conf number and my last reserve should ID her. Alicia rocked!!"
+    ],
+    "proposed_name": "frequent_flyer_inquiry",
+    "rationale": "Customers are seeking help accessing, retrieving, or managing their SkyMiles account information and frequent flyer numbers."
+  },
+  {
+    "cluster": 29,
+    "size": 217,
+    "top_terms": [
+      "need",
+      "hey",
+      "need_help",
+      "help",
+      "flight",
+      "assistance",
+      "need_assistance",
+      "dm",
+      "reservation",
+      "cancel",
+      "help_flight",
+      "booked"
+    ],
+    "examples": [
+      "@Delta would you be able to help here regarding an upcoming reservation. segment cxld hence dropped but ticket issued by delta so need help",
+      "Hey, @Delta what’s up with breaking my suitcase handle?? It’s all stuck and won’t come out after it was handled by y’all.",
+      "@Delta: students at Embry Riddle Aeronautical University need new Aviation/Engineering books in Library - can you help?",
+      "Hey @Delta - what’s with the official Delta Lamborghini next to the plane I just boarded? Is this why my flight price is so high? \u003curl\u003e",
+      "@Delta hey guys, do you have some phone number in Brazil? I need some information about my reservation...",
+      "@Delta you need to fix your system. ATL to MSP is 11 hours? 3000 mph? \u003curl\u003e",
+      "@Delta bruh I been on the phone for support for almost AN HOUR. do y'all need to optimize your call center scheduling?",
+      "@delta- need help resetting miles skymiles password. It locked me out. Help!"
+    ],
+    "proposed_name": "support_request",
+    "rationale": "Customers are seeking assistance from Delta to resolve various service issues including booking problems, account access, luggage damage, and system errors."
+  }
+]
