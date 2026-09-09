@@ -11,7 +11,7 @@ LABEL_MODEL  ?= gemini-2.5-pro
 JUDGE_MODEL  ?= gemini-2.5-pro
 WORKERS      ?= 6
 
-.PHONY: help repro all data intents golden labels review audit run judge report clean test fmt check
+.PHONY: help repro all data fetch-data intents golden labels review audit rate-replies run judge report clean test fmt check
 
 help:
 	@echo "make repro    - reproduce headline results from the committed cache (offline, ~2 min)"
