@@ -100,3 +100,25 @@ multinomial logistic regression, Wilson intervals, bootstrap CIs and quadratic-w
 are all implemented in `internal/`. This is ~700 lines I would normally not write, but it makes
 `go build ./...` hermetic, keeps the reproduce step to a couple of minutes, and means every
 metric definition is inspectable rather than hidden behind a library default.
+
+---
+
+## Added after the first full evaluation run
+
+**18. Shipped the retrieval step even though its ablation does not justify it.**
+`agent-no-retrieval` matches or beats `agent` on every metric measured. The gaps are inside
+their confidence intervals, so the finding is "no effect", not "retrieval hurts". I kept the
+retrieval path in the shipped system and reported the null result rather than quietly removing
+it, because the ablation is the interesting output here, not the system. The probable cause is
+that TF-IDF finds lexically similar tweets rather than similar situations.
+
+**19. Left `intent_default_escalate` in place despite knowing it costs 11.5% of the set.**
+23 of 200 gold items are `auto` under an intent whose default is `escalate`, so the rule is
+wrong on all of them by construction. Removing it would raise auto rate and also raise
+false-auto rate, and I had no cost model to justify that trade. It is recorded as the first
+structural limit rather than tuned away.
+
+**20. Reported the judge scoring the agent above Delta's own agents, rather than dropping the
+reference row.** 3.91 vs 3.50 composite is not credible as a quality claim. The row stays
+because it is the cleanest available evidence that the absolute judge scores are inflated, and
+deleting it would have hidden that.

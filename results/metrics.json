@@ -1,0 +1,3143 @@
+{
+  "golden_set": {
+    "n": 200,
+    "by_stratum": {
+      "random": 120,
+      "targeted": 80
+    },
+    "intent_counts": {
+      "baggage": 9,
+      "booking_change": 18,
+      "contact_support": 9,
+      "digital_issue": 8,
+      "flight_disruption": 22,
+      "general_inquiry": 14,
+      "loyalty_program": 16,
+      "other": 10,
+      "praise": 51,
+      "refund_compensation": 10,
+      "service_complaint": 33
+    },
+    "route_counts": {
+      "auto": 110,
+      "escalate": 90
+    },
+    "random_stratum_route_counts": {
+      "auto": 68,
+      "escalate": 52
+    },
+    "human_reviewed": 0,
+    "human_overridden": 0,
+    "two_pass_raw_agreement": 0.845
+  },
+  "systems": [
+    {
+      "name": "trivial-escalate",
+      "intent": {
+        "n": 200,
+        "accuracy": 0.255,
+        "macro_f1": 0.03694313654473017,
+        "weighted_f1": 0.10362549800796814,
+        "per_class": [
+          {
+            "label": "flight_disruption",
+            "support": 22,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "baggage",
+            "support": 9,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "booking_change",
+            "support": 18,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "refund_compensation",
+            "support": 10,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "loyalty_program",
+            "support": 16,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "digital_issue",
+            "support": 8,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "service_complaint",
+            "support": 33,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "contact_support",
+            "support": 9,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "general_inquiry",
+            "support": 14,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "praise",
+            "support": 51,
+            "predicted": 200,
+            "precision": 0.255,
+            "recall": 1,
+            "f1": 0.4063745019920319
+          },
+          {
+            "label": "other",
+            "support": 10,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          }
+        ],
+        "labels": [
+          "flight_disruption",
+          "baggage",
+          "booking_change",
+          "refund_compensation",
+          "loyalty_program",
+          "digital_issue",
+          "service_complaint",
+          "contact_support",
+          "general_inquiry",
+          "praise",
+          "other"
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            22,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            18,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            10,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            16,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            33,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            14,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            51,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            10,
+            0
+          ]
+        ]
+      },
+      "intent_random_stratum": {
+        "n": 120,
+        "accuracy": 0.275,
+        "macro_f1": 0.03921568627450981,
+        "weighted_f1": 0.11862745098039218,
+        "per_class": [
+          {
+            "label": "flight_disruption",
+            "support": 14,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "baggage",
+            "support": 7,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "booking_change",
+            "support": 17,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "refund_compensation",
+            "support": 6,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "loyalty_program",
+            "support": 8,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "digital_issue",
+            "support": 5,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "service_complaint",
+            "support": 11,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "contact_support",
+            "support": 5,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "general_inquiry",
+            "support": 9,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "praise",
+            "support": 33,
+            "predicted": 120,
+            "precision": 0.275,
+            "recall": 1,
+            "f1": 0.4313725490196079
+          },
+          {
+            "label": "other",
+            "support": 5,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          }
+        ],
+        "labels": [
+          "flight_disruption",
+          "baggage",
+          "booking_change",
+          "refund_compensation",
+          "loyalty_program",
+          "digital_issue",
+          "service_complaint",
+          "contact_support",
+          "general_inquiry",
+          "praise",
+          "other"
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            14,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            7,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            17,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            11,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            33,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ]
+        ]
+      },
+      "routing": {
+        "n": 200,
+        "auto_auto": 0,
+        "auto_escalate": 110,
+        "escalate_auto": 0,
+        "escalate_escalate": 90,
+        "auto_rate": 0,
+        "false_auto_rate": 0,
+        "escalation_recall": 1,
+        "auto_precision": 0,
+        "over_escalation_rate": 1,
+        "accuracy": 0.45,
+        "false_auto_ci95": [
+          0,
+          0
+        ],
+        "auto_rate_ci95": [
+          0,
+          0.018845326668962936
+        ]
+      },
+      "routing_random_stratum": {
+        "n": 120,
+        "auto_auto": 0,
+        "auto_escalate": 68,
+        "escalate_auto": 0,
+        "escalate_escalate": 52,
+        "auto_rate": 0,
+        "false_auto_rate": 0,
+        "escalation_recall": 1,
+        "auto_precision": 0,
+        "over_escalation_rate": 1,
+        "accuracy": 0.43333333333333335,
+        "false_auto_ci95": [
+          0,
+          0
+        ],
+        "auto_rate_ci95": [
+          0,
+          0.03101916689287469
+        ]
+      },
+      "routing_targeted_stratum": {
+        "n": 80,
+        "auto_auto": 0,
+        "auto_escalate": 42,
+        "escalate_auto": 0,
+        "escalate_escalate": 38,
+        "auto_rate": 0,
+        "false_auto_rate": 0,
+        "escalation_recall": 1,
+        "auto_precision": 0,
+        "over_escalation_rate": 1,
+        "accuracy": 0.475,
+        "false_auto_ci95": [
+          0,
+          0
+        ],
+        "auto_rate_ci95": [
+          0,
+          0.04581813022522419
+        ]
+      },
+      "judge": {
+        "n": 0,
+        "grounding": 0,
+        "resolution": 0,
+        "tone": 0,
+        "composite": 0,
+        "composite_ci95": [
+          0,
+          0
+        ],
+        "sendable_rate": 0,
+        "sendable_ci95": [
+          0,
+          0
+        ],
+        "violation_rate": 0,
+        "auto_sendable_rate": 0,
+        "auto_sendable_n": 0
+      },
+      "intent_accuracy_ci95": [
+        0.19,
+        0.315
+      ],
+      "macro_f1_ci95": [
+        0.030303030303030307,
+        0.0440771349862259
+      ]
+    },
+    {
+      "name": "trivial-auto",
+      "intent": {
+        "n": 200,
+        "accuracy": 0.255,
+        "macro_f1": 0.03694313654473017,
+        "weighted_f1": 0.10362549800796814,
+        "per_class": [
+          {
+            "label": "flight_disruption",
+            "support": 22,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "baggage",
+            "support": 9,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "booking_change",
+            "support": 18,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "refund_compensation",
+            "support": 10,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "loyalty_program",
+            "support": 16,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "digital_issue",
+            "support": 8,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "service_complaint",
+            "support": 33,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "contact_support",
+            "support": 9,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "general_inquiry",
+            "support": 14,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "praise",
+            "support": 51,
+            "predicted": 200,
+            "precision": 0.255,
+            "recall": 1,
+            "f1": 0.4063745019920319
+          },
+          {
+            "label": "other",
+            "support": 10,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          }
+        ],
+        "labels": [
+          "flight_disruption",
+          "baggage",
+          "booking_change",
+          "refund_compensation",
+          "loyalty_program",
+          "digital_issue",
+          "service_complaint",
+          "contact_support",
+          "general_inquiry",
+          "praise",
+          "other"
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            22,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            18,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            10,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            16,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            33,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            14,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            51,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            10,
+            0
+          ]
+        ]
+      },
+      "intent_random_stratum": {
+        "n": 120,
+        "accuracy": 0.275,
+        "macro_f1": 0.03921568627450981,
+        "weighted_f1": 0.11862745098039218,
+        "per_class": [
+          {
+            "label": "flight_disruption",
+            "support": 14,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "baggage",
+            "support": 7,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "booking_change",
+            "support": 17,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "refund_compensation",
+            "support": 6,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "loyalty_program",
+            "support": 8,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "digital_issue",
+            "support": 5,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "service_complaint",
+            "support": 11,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "contact_support",
+            "support": 5,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "general_inquiry",
+            "support": 9,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "praise",
+            "support": 33,
+            "predicted": 120,
+            "precision": 0.275,
+            "recall": 1,
+            "f1": 0.4313725490196079
+          },
+          {
+            "label": "other",
+            "support": 5,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          }
+        ],
+        "labels": [
+          "flight_disruption",
+          "baggage",
+          "booking_change",
+          "refund_compensation",
+          "loyalty_program",
+          "digital_issue",
+          "service_complaint",
+          "contact_support",
+          "general_inquiry",
+          "praise",
+          "other"
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            14,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            7,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            17,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            11,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            33,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ]
+        ]
+      },
+      "routing": {
+        "n": 200,
+        "auto_auto": 110,
+        "auto_escalate": 0,
+        "escalate_auto": 90,
+        "escalate_escalate": 0,
+        "auto_rate": 1,
+        "false_auto_rate": 0.45,
+        "escalation_recall": 0,
+        "auto_precision": 0.55,
+        "over_escalation_rate": 0,
+        "accuracy": 0.55,
+        "false_auto_ci95": [
+          0.38264068350836655,
+          0.5192438491585296
+        ],
+        "auto_rate_ci95": [
+          0.9811546733310369,
+          0.9999999999999999
+        ]
+      },
+      "routing_random_stratum": {
+        "n": 120,
+        "auto_auto": 68,
+        "auto_escalate": 0,
+        "escalate_auto": 52,
+        "escalate_escalate": 0,
+        "auto_rate": 1,
+        "false_auto_rate": 0.43333333333333335,
+        "escalation_recall": 0,
+        "auto_precision": 0.5666666666666667,
+        "over_escalation_rate": 0,
+        "accuracy": 0.5666666666666667,
+        "false_auto_ci95": [
+          0.34810176374187385,
+          0.5227007918438427
+        ],
+        "auto_rate_ci95": [
+          0.9689808331071251,
+          0.9999999999999999
+        ]
+      },
+      "routing_targeted_stratum": {
+        "n": 80,
+        "auto_auto": 42,
+        "auto_escalate": 0,
+        "escalate_auto": 38,
+        "escalate_escalate": 0,
+        "auto_rate": 1,
+        "false_auto_rate": 0.475,
+        "escalation_recall": 0,
+        "auto_precision": 0.525,
+        "over_escalation_rate": 0,
+        "accuracy": 0.525,
+        "false_auto_ci95": [
+          0.3692473321866608,
+          0.5830435743246003
+        ],
+        "auto_rate_ci95": [
+          0.9541818697747756,
+          0.9999999999999999
+        ]
+      },
+      "judge": {
+        "n": 0,
+        "grounding": 0,
+        "resolution": 0,
+        "tone": 0,
+        "composite": 0,
+        "composite_ci95": [
+          0,
+          0
+        ],
+        "sendable_rate": 0,
+        "sendable_ci95": [
+          0,
+          0
+        ],
+        "violation_rate": 0,
+        "auto_sendable_rate": 0,
+        "auto_sendable_n": 0
+      },
+      "intent_accuracy_ci95": [
+        0.19,
+        0.315
+      ],
+      "macro_f1_ci95": [
+        0.030303030303030307,
+        0.0440771349862259
+      ]
+    },
+    {
+      "name": "simple",
+      "intent": {
+        "n": 200,
+        "accuracy": 0.305,
+        "macro_f1": 0.11646518580157025,
+        "weighted_f1": 0.20021959488092214,
+        "per_class": [
+          {
+            "label": "flight_disruption",
+            "support": 22,
+            "predicted": 5,
+            "precision": 0.8,
+            "recall": 0.18181818181818182,
+            "f1": 0.2962962962962963
+          },
+          {
+            "label": "baggage",
+            "support": 9,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "booking_change",
+            "support": 18,
+            "predicted": 2,
+            "precision": 0.5,
+            "recall": 0.05555555555555555,
+            "f1": 0.09999999999999999
+          },
+          {
+            "label": "refund_compensation",
+            "support": 10,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "loyalty_program",
+            "support": 16,
+            "predicted": 3,
+            "precision": 1,
+            "recall": 0.1875,
+            "f1": 0.3157894736842105
+          },
+          {
+            "label": "digital_issue",
+            "support": 8,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "service_complaint",
+            "support": 33,
+            "predicted": 13,
+            "precision": 0.23076923076923078,
+            "recall": 0.09090909090909091,
+            "f1": 0.13043478260869568
+          },
+          {
+            "label": "contact_support",
+            "support": 9,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "general_inquiry",
+            "support": 14,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "praise",
+            "support": 51,
+            "predicted": 177,
+            "precision": 0.2824858757062147,
+            "recall": 0.9803921568627451,
+            "f1": 0.43859649122807026
+          },
+          {
+            "label": "other",
+            "support": 10,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          }
+        ],
+        "labels": [
+          "flight_disruption",
+          "baggage",
+          "booking_change",
+          "refund_compensation",
+          "loyalty_program",
+          "digital_issue",
+          "service_complaint",
+          "contact_support",
+          "general_inquiry",
+          "praise",
+          "other"
+        ],
+        "confusion": [
+          [
+            4,
+            0,
+            1,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            15,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            14,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            10,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            1,
+            0,
+            0,
+            12,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            30,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            14,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            50,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            10,
+            0
+          ]
+        ]
+      },
+      "intent_random_stratum": {
+        "n": 120,
+        "accuracy": 0.325,
+        "macro_f1": 0.11422321809645754,
+        "weighted_f1": 0.20871967918622847,
+        "per_class": [
+          {
+            "label": "flight_disruption",
+            "support": 14,
+            "predicted": 4,
+            "precision": 0.75,
+            "recall": 0.21428571428571427,
+            "f1": 0.3333333333333333
+          },
+          {
+            "label": "baggage",
+            "support": 7,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "booking_change",
+            "support": 17,
+            "predicted": 1,
+            "precision": 1,
+            "recall": 0.058823529411764705,
+            "f1": 0.1111111111111111
+          },
+          {
+            "label": "refund_compensation",
+            "support": 6,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "loyalty_program",
+            "support": 8,
+            "predicted": 1,
+            "precision": 1,
+            "recall": 0.125,
+            "f1": 0.2222222222222222
+          },
+          {
+            "label": "digital_issue",
+            "support": 5,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "service_complaint",
+            "support": 11,
+            "predicted": 5,
+            "precision": 0.2,
+            "recall": 0.09090909090909091,
+            "f1": 0.12500000000000003
+          },
+          {
+            "label": "contact_support",
+            "support": 5,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "general_inquiry",
+            "support": 9,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "praise",
+            "support": 33,
+            "predicted": 109,
+            "precision": 0.30275229357798167,
+            "recall": 1,
+            "f1": 0.46478873239436624
+          },
+          {
+            "label": "other",
+            "support": 5,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          }
+        ],
+        "labels": [
+          "flight_disruption",
+          "baggage",
+          "booking_change",
+          "refund_compensation",
+          "loyalty_program",
+          "digital_issue",
+          "service_complaint",
+          "contact_support",
+          "general_inquiry",
+          "praise",
+          "other"
+        ],
+        "confusion": [
+          [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            11,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            7,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            13,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            7,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            10,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            33,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ]
+        ]
+      },
+      "routing": {
+        "n": 200,
+        "auto_auto": 22,
+        "auto_escalate": 88,
+        "escalate_auto": 3,
+        "escalate_escalate": 87,
+        "auto_rate": 0.125,
+        "false_auto_rate": 0.12,
+        "escalation_recall": 0.9666666666666667,
+        "auto_precision": 0.88,
+        "over_escalation_rate": 0.8,
+        "accuracy": 0.545,
+        "false_auto_ci95": [
+          0.04166817117905039,
+          0.2995579409188468
+        ],
+        "auto_rate_ci95": [
+          0.0861197445025044,
+          0.1780142504992178
+        ]
+      },
+      "routing_random_stratum": {
+        "n": 120,
+        "auto_auto": 16,
+        "auto_escalate": 52,
+        "escalate_auto": 3,
+        "escalate_escalate": 49,
+        "auto_rate": 0.15833333333333333,
+        "false_auto_rate": 0.15789473684210525,
+        "escalation_recall": 0.9423076923076923,
+        "auto_precision": 0.8421052631578947,
+        "over_escalation_rate": 0.7647058823529411,
+        "accuracy": 0.5416666666666666,
+        "false_auto_ci95": [
+          0.055204715953508426,
+          0.3756547546451403
+        ],
+        "auto_rate_ci95": [
+          0.10376977324488977,
+          0.23409332413190787
+        ]
+      },
+      "routing_targeted_stratum": {
+        "n": 80,
+        "auto_auto": 6,
+        "auto_escalate": 36,
+        "escalate_auto": 0,
+        "escalate_escalate": 38,
+        "auto_rate": 0.075,
+        "false_auto_rate": 0,
+        "escalation_recall": 1,
+        "auto_precision": 1,
+        "over_escalation_rate": 0.8571428571428571,
+        "accuracy": 0.55,
+        "false_auto_ci95": [
+          0,
+          0.39033429165637346
+        ],
+        "auto_rate_ci95": [
+          0.03482524908934525,
+          0.1541201616020953
+        ]
+      },
+      "judge": {
+        "n": 0,
+        "grounding": 0,
+        "resolution": 0,
+        "tone": 0,
+        "composite": 0,
+        "composite_ci95": [
+          0,
+          0
+        ],
+        "sendable_rate": 0,
+        "sendable_ci95": [
+          0,
+          0
+        ],
+        "violation_rate": 0,
+        "auto_sendable_rate": 0,
+        "auto_sendable_n": 0
+      },
+      "intent_accuracy_ci95": [
+        0.24,
+        0.365
+      ],
+      "macro_f1_ci95": [
+        0.07342902711323764,
+        0.1558825382354794
+      ]
+    },
+    {
+      "name": "agent-no-retrieval",
+      "intent": {
+        "n": 200,
+        "accuracy": 0.05,
+        "macro_f1": 0.008658008658008658,
+        "weighted_f1": 0.0047619047619047615,
+        "per_class": [
+          {
+            "label": "flight_disruption",
+            "support": 22,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "baggage",
+            "support": 9,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "booking_change",
+            "support": 18,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "refund_compensation",
+            "support": 10,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "loyalty_program",
+            "support": 16,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "digital_issue",
+            "support": 8,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "service_complaint",
+            "support": 33,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "contact_support",
+            "support": 9,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "general_inquiry",
+            "support": 14,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "praise",
+            "support": 51,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "other",
+            "support": 10,
+            "predicted": 200,
+            "precision": 0.05,
+            "recall": 1,
+            "f1": 0.09523809523809523
+          }
+        ],
+        "labels": [
+          "flight_disruption",
+          "baggage",
+          "booking_change",
+          "refund_compensation",
+          "loyalty_program",
+          "digital_issue",
+          "service_complaint",
+          "contact_support",
+          "general_inquiry",
+          "praise",
+          "other"
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            22
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            18
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            10
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            16
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            33
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            14
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            51
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            10
+          ]
+        ]
+      },
+      "intent_random_stratum": {
+        "n": 120,
+        "accuracy": 0.041666666666666664,
+        "macro_f1": 0.007272727272727272,
+        "weighted_f1": 0.0033333333333333327,
+        "per_class": [
+          {
+            "label": "flight_disruption",
+            "support": 14,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "baggage",
+            "support": 7,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "booking_change",
+            "support": 17,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "refund_compensation",
+            "support": 6,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "loyalty_program",
+            "support": 8,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "digital_issue",
+            "support": 5,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "service_complaint",
+            "support": 11,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "contact_support",
+            "support": 5,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "general_inquiry",
+            "support": 9,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "praise",
+            "support": 33,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "other",
+            "support": 5,
+            "predicted": 120,
+            "precision": 0.041666666666666664,
+            "recall": 1,
+            "f1": 0.07999999999999999
+          }
+        ],
+        "labels": [
+          "flight_disruption",
+          "baggage",
+          "booking_change",
+          "refund_compensation",
+          "loyalty_program",
+          "digital_issue",
+          "service_complaint",
+          "contact_support",
+          "general_inquiry",
+          "praise",
+          "other"
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            14
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            7
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            17
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            6
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            11
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            33
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5
+          ]
+        ]
+      },
+      "routing": {
+        "n": 200,
+        "auto_auto": 0,
+        "auto_escalate": 110,
+        "escalate_auto": 0,
+        "escalate_escalate": 90,
+        "auto_rate": 0,
+        "false_auto_rate": 0,
+        "escalation_recall": 1,
+        "auto_precision": 0,
+        "over_escalation_rate": 1,
+        "accuracy": 0.45,
+        "false_auto_ci95": [
+          0,
+          0
+        ],
+        "auto_rate_ci95": [
+          0,
+          0.018845326668962936
+        ]
+      },
+      "routing_random_stratum": {
+        "n": 120,
+        "auto_auto": 0,
+        "auto_escalate": 68,
+        "escalate_auto": 0,
+        "escalate_escalate": 52,
+        "auto_rate": 0,
+        "false_auto_rate": 0,
+        "escalation_recall": 1,
+        "auto_precision": 0,
+        "over_escalation_rate": 1,
+        "accuracy": 0.43333333333333335,
+        "false_auto_ci95": [
+          0,
+          0
+        ],
+        "auto_rate_ci95": [
+          0,
+          0.03101916689287469
+        ]
+      },
+      "routing_targeted_stratum": {
+        "n": 80,
+        "auto_auto": 0,
+        "auto_escalate": 42,
+        "escalate_auto": 0,
+        "escalate_escalate": 38,
+        "auto_rate": 0,
+        "false_auto_rate": 0,
+        "escalation_recall": 1,
+        "auto_precision": 0,
+        "over_escalation_rate": 1,
+        "accuracy": 0.475,
+        "false_auto_ci95": [
+          0,
+          0
+        ],
+        "auto_rate_ci95": [
+          0,
+          0.04581813022522419
+        ]
+      },
+      "judge": {
+        "n": 200,
+        "grounding": 1,
+        "resolution": 1,
+        "tone": 1,
+        "composite": 1,
+        "composite_ci95": [
+          1,
+          1
+        ],
+        "sendable_rate": 0,
+        "sendable_ci95": [
+          0,
+          0.018845326668962936
+        ],
+        "violation_rate": 1,
+        "auto_sendable_rate": 0,
+        "auto_sendable_n": 0
+      },
+      "intent_accuracy_ci95": [
+        0.02,
+        0.085
+      ],
+      "macro_f1_ci95": [
+        0.0035650623885918,
+        0.013468013468013467
+      ]
+    },
+    {
+      "name": "agent",
+      "intent": {
+        "n": 200,
+        "accuracy": 0.05,
+        "macro_f1": 0.008658008658008658,
+        "weighted_f1": 0.0047619047619047615,
+        "per_class": [
+          {
+            "label": "flight_disruption",
+            "support": 22,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "baggage",
+            "support": 9,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "booking_change",
+            "support": 18,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "refund_compensation",
+            "support": 10,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "loyalty_program",
+            "support": 16,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "digital_issue",
+            "support": 8,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "service_complaint",
+            "support": 33,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "contact_support",
+            "support": 9,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "general_inquiry",
+            "support": 14,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "praise",
+            "support": 51,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "other",
+            "support": 10,
+            "predicted": 200,
+            "precision": 0.05,
+            "recall": 1,
+            "f1": 0.09523809523809523
+          }
+        ],
+        "labels": [
+          "flight_disruption",
+          "baggage",
+          "booking_change",
+          "refund_compensation",
+          "loyalty_program",
+          "digital_issue",
+          "service_complaint",
+          "contact_support",
+          "general_inquiry",
+          "praise",
+          "other"
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            22
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            18
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            10
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            16
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            33
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            14
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            51
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            10
+          ]
+        ]
+      },
+      "intent_random_stratum": {
+        "n": 120,
+        "accuracy": 0.041666666666666664,
+        "macro_f1": 0.007272727272727272,
+        "weighted_f1": 0.0033333333333333327,
+        "per_class": [
+          {
+            "label": "flight_disruption",
+            "support": 14,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "baggage",
+            "support": 7,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "booking_change",
+            "support": 17,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "refund_compensation",
+            "support": 6,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "loyalty_program",
+            "support": 8,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "digital_issue",
+            "support": 5,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "service_complaint",
+            "support": 11,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "contact_support",
+            "support": 5,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "general_inquiry",
+            "support": 9,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "praise",
+            "support": 33,
+            "predicted": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          },
+          {
+            "label": "other",
+            "support": 5,
+            "predicted": 120,
+            "precision": 0.041666666666666664,
+            "recall": 1,
+            "f1": 0.07999999999999999
+          }
+        ],
+        "labels": [
+          "flight_disruption",
+          "baggage",
+          "booking_change",
+          "refund_compensation",
+          "loyalty_program",
+          "digital_issue",
+          "service_complaint",
+          "contact_support",
+          "general_inquiry",
+          "praise",
+          "other"
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            14
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            7
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            17
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            6
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            11
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            33
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5
+          ]
+        ]
+      },
+      "routing": {
+        "n": 200,
+        "auto_auto": 0,
+        "auto_escalate": 110,
+        "escalate_auto": 0,
+        "escalate_escalate": 90,
+        "auto_rate": 0,
+        "false_auto_rate": 0,
+        "escalation_recall": 1,
+        "auto_precision": 0,
+        "over_escalation_rate": 1,
+        "accuracy": 0.45,
+        "false_auto_ci95": [
+          0,
+          0
+        ],
+        "auto_rate_ci95": [
+          0,
+          0.018845326668962936
+        ]
+      },
+      "routing_random_stratum": {
+        "n": 120,
+        "auto_auto": 0,
+        "auto_escalate": 68,
+        "escalate_auto": 0,
+        "escalate_escalate": 52,
+        "auto_rate": 0,
+        "false_auto_rate": 0,
+        "escalation_recall": 1,
+        "auto_precision": 0,
+        "over_escalation_rate": 1,
+        "accuracy": 0.43333333333333335,
+        "false_auto_ci95": [
+          0,
+          0
+        ],
+        "auto_rate_ci95": [
+          0,
+          0.03101916689287469
+        ]
+      },
+      "routing_targeted_stratum": {
+        "n": 80,
+        "auto_auto": 0,
+        "auto_escalate": 42,
+        "escalate_auto": 0,
+        "escalate_escalate": 38,
+        "auto_rate": 0,
+        "false_auto_rate": 0,
+        "escalation_recall": 1,
+        "auto_precision": 0,
+        "over_escalation_rate": 1,
+        "accuracy": 0.475,
+        "false_auto_ci95": [
+          0,
+          0
+        ],
+        "auto_rate_ci95": [
+          0,
+          0.04581813022522419
+        ]
+      },
+      "judge": {
+        "n": 200,
+        "grounding": 1,
+        "resolution": 1,
+        "tone": 1,
+        "composite": 1,
+        "composite_ci95": [
+          1,
+          1
+        ],
+        "sendable_rate": 0,
+        "sendable_ci95": [
+          0,
+          0.018845326668962936
+        ],
+        "violation_rate": 1,
+        "auto_sendable_rate": 0,
+        "auto_sendable_n": 0
+      },
+      "intent_accuracy_ci95": [
+        0.02,
+        0.085
+      ],
+      "macro_f1_ci95": [
+        0.0035650623885918,
+        0.013468013468013467
+      ]
+    }
+  ],
+  "judge_agreement": {
+    "status": "no human ratings yet - run `go run ./cmd/review -mode replies`"
+  },
+  "label_quality": {
+    "overridden": 0,
+    "reviewed": 0
+  },
+  "ablations": {
+    "guardrail_overrides": 0,
+    "routing_model_only": {
+      "n": 200,
+      "auto_auto": 0,
+      "auto_escalate": 110,
+      "escalate_auto": 0,
+      "escalate_escalate": 90,
+      "auto_rate": 0,
+      "false_auto_rate": 0,
+      "escalation_recall": 1,
+      "auto_precision": 0,
+      "over_escalation_rate": 1,
+      "accuracy": 0.45,
+      "false_auto_ci95": [
+        0,
+        0
+      ],
+      "auto_rate_ci95": [
+        0,
+        0.018845326668962936
+      ]
+    },
+    "routing_with_guardrails": {
+      "n": 200,
+      "auto_auto": 0,
+      "auto_escalate": 110,
+      "escalate_auto": 0,
+      "escalate_escalate": 90,
+      "auto_rate": 0,
+      "false_auto_rate": 0,
+      "escalation_recall": 1,
+      "auto_precision": 0,
+      "over_escalation_rate": 1,
+      "accuracy": 0.45,
+      "false_auto_ci95": [
+        0,
+        0
+      ],
+      "auto_rate_ci95": [
+        0,
+        0.018845326668962936
+      ]
+    },
+    "rule_firing": [
+      {
+        "rule": "agent_error",
+        "fired": 200,
+        "precision": 0.45
+      }
+    ]
+  },
+  "calibration": [
+    {
+      "lo": 0,
+      "hi": 0.5,
+      "n": 200,
+      "mean_confidence": 0,
+      "accuracy": 0.05
+    },
+    {
+      "lo": 0.5,
+      "hi": 0.7,
+      "n": 0,
+      "mean_confidence": 0,
+      "accuracy": 0
+    },
+    {
+      "lo": 0.7,
+      "hi": 0.8,
+      "n": 0,
+      "mean_confidence": 0,
+      "accuracy": 0
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.9,
+      "n": 0,
+      "mean_confidence": 0,
+      "accuracy": 0
+    },
+    {
+      "lo": 0.9,
+      "hi": 0.95,
+      "n": 0,
+      "mean_confidence": 0,
+      "accuracy": 0
+    },
+    {
+      "lo": 0.95,
+      "hi": 1.0001,
+      "n": 0,
+      "mean_confidence": 0,
+      "accuracy": 0
+    }
+  ]
+}
