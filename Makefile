@@ -11,7 +11,7 @@ LABEL_MODEL  ?= gemini-2.5-pro
 JUDGE_MODEL  ?= gemini-2.5-pro
 WORKERS      ?= 6
 
-.PHONY: help repro all data fetch-data intents golden labels review audit rate-replies run judge report clean test fmt check
+.PHONY: help repro all data fetch-data intents golden labels seed-golden review audit rate-replies run judge report clean test fmt check
 
 help:
 	@echo "make repro    - reproduce headline results from the committed cache (offline, ~2 min)"
@@ -46,7 +46,7 @@ fetch-data:
 	  "https://huggingface.co/datasets/SunidhiSriram/twcs/resolve/main/twcs.csv"
 
 # ---------------------------------------------------------------- full run
-all: data intents golden labels run judge report
+all: data intents golden labels seed-golden run judge report
 
 intents:
 	go run ./cmd/discover-intents -k 30
@@ -56,6 +56,12 @@ golden:
 
 labels:
 	go run ./cmd/label-assist -model $(LABEL_MODEL) -workers $(WORKERS)
+
+# Seeds the golden set with UNREVIEWED drafts so the pipeline runs end-to-end
+# before the human pass. `make review` overwrites these item by item.
+seed-golden: data/golden/golden_draft.jsonl
+	cp data/golden/golden_draft.jsonl data/golden/golden_set.jsonl
+	@echo "WARNING: golden_set.jsonl holds UNREVIEWED model drafts. Run 'make review'."
 
 review:
 	go run ./cmd/review -mode labels

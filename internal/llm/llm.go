@@ -48,8 +48,6 @@ type Client interface {
 	Complete(ctx context.Context, r Request) (string, error)
 }
 
-// ---------------------------------------------------------------- cache
-
 type cacheEntry struct {
 	Key      string  `json:"key"`
 	Request  Request `json:"request"`
@@ -136,8 +134,6 @@ func (c *Cached) Complete(ctx context.Context, r Request) (string, error) {
 	return resp, nil
 }
 
-// ---------------------------------------------------------------- anthropic API
-
 type anthropicClient struct {
 	key  string
 	http *http.Client
@@ -202,8 +198,6 @@ func (a *anthropicClient) Complete(ctx context.Context, r Request) (string, erro
 	return "", fmt.Errorf("anthropic: exhausted retries: %w", lastErr)
 }
 
-// ---------------------------------------------------------------- claude CLI
-
 type cliClient struct{ bin string }
 
 func (c *cliClient) Complete(ctx context.Context, r Request) (string, error) {
@@ -241,8 +235,6 @@ func (c *cliClient) Complete(ctx context.Context, r Request) (string, error) {
 	}
 	return "", fmt.Errorf("claude cli: exhausted retries: %w", lastErr)
 }
-
-// ---------------------------------------------------------------- construction
 
 // New builds a cached client. The provider comes from LLM_PROVIDER, else is
 // inferred from whichever key or binary is present.

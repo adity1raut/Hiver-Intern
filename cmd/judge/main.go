@@ -49,6 +49,7 @@ func main() {
 		humanN     = flag.Int("human-n", 60, "reply-rating tasks to emit for the human")
 		seed       = flag.Int64("seed", 23, "rng seed")
 		alsoDelta  = flag.Bool("judge-delta", true, "also grade Delta's own historical replies as a ceiling")
+		limit      = flag.Int("limit", 0, "grade only the first N replies (0 = all); for smoke-testing")
 	)
 	flag.Parse()
 
@@ -89,6 +90,9 @@ func main() {
 		for _, g := range golden {
 			jobs = append(jobs, job{g.EpisodeID, "delta-human", g.CustomerText, g.DeltaReply, g.DeltaReply})
 		}
+	}
+	if *limit > 0 && *limit < len(jobs) {
+		jobs = jobs[:*limit]
 	}
 	log.Printf("grading %d replies across %d systems", len(jobs), len(strings.Split(*systems, ","))+1)
 

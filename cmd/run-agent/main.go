@@ -46,6 +46,7 @@ func main() {
 		folds      = flag.Int("folds", 5, "CV folds for the simple baseline classifier")
 		histFrac   = flag.Float64("history-frac", 0.70, "temporal history fraction")
 		only       = flag.String("only", "", "comma-separated systems to run (default all)")
+		limit      = flag.Int("limit", 0, "run only the first N golden items (0 = all); for smoke-testing")
 	)
 	flag.Parse()
 
@@ -58,6 +59,9 @@ func main() {
 		if g.GoldIntent != "" && g.GoldRoute != "" {
 			items = append(items, g)
 		}
+	}
+	if *limit > 0 && *limit < len(items) {
+		items = items[:*limit]
 	}
 	log.Printf("golden set: %d labelled items", len(items))
 
@@ -73,7 +77,6 @@ func main() {
 	th := agent.DefaultThresholds
 	want := parseOnly(*only)
 
-	// ---------------------------------------------------------- trivial
 	majority := baseline.MajorityIntent(intents(items))
 	log.Printf("majority intent in the golden set: %s", majority)
 
@@ -92,13 +95,11 @@ func main() {
 		writeOut(*outDir, spec.name, outs)
 	}
 
-	// ---------------------------------------------------------- simple
 	if want("simple") {
 		outs := runSimple(items, retr, th, *folds)
 		writeOut(*outDir, "simple", outs)
 	}
 
-	// ---------------------------------------------------------- LLM systems
 	needLLM := want("agent") || want("agent-no-retrieval")
 	if !needLLM {
 		fmt.Println("done (no LLM systems requested)")

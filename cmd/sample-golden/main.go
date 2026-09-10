@@ -81,7 +81,6 @@ func main() {
 	taken := map[int]bool{}
 	var items []GoldenItem
 
-	// ---- stratum 1: uniform random -------------------------------------
 	for _, i := range order {
 		if len(items) >= *nRandom {
 			break
@@ -90,7 +89,6 @@ func main() {
 		items = append(items, newItem(clean[i], "random", "uniform draw from the eval pool"))
 	}
 
-	// ---- stratum 2: targeted stress ------------------------------------
 	// One bucket per guardrail rule, then topical clusters for the rest.
 	byRule := map[string][]int{}
 	for i, e := range clean {

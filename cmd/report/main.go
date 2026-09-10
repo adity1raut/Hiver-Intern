@@ -196,8 +196,6 @@ func main() {
 	fmt.Printf("\nwrote %s and %s\n", *outMD, *outJSON)
 }
 
-// ---------------------------------------------------------------- computation
-
 func goldenStats(items []goldenItem) GoldenStats {
 	s := GoldenStats{
 		N: len(items), ByStratum: map[string]int{}, IntentCounts: map[string]int{},

@@ -1,6 +1,9 @@
 package agent
 
-import "testing"
+import (
+	"strings"
+	"testing"
+)
 
 func TestGuardrailsAreAOneWayRatchet(t *testing.T) {
 	// The model wants to auto-handle a discrimination complaint. The policy must
@@ -103,4 +106,68 @@ func contains(ss []string, s string) bool {
 		}
 	}
 	return false
+}
+
+// Regression tests for false positives found by smoke-testing the real corpus.
+func TestGuardrailsDoNotFireOnInnocentPhrasing(t *testing.T) {
+	cases := []struct{ msg, mustNotFire string }{
+		// "the account you disabled" is not a disabled passenger
+		{"why won't you call a Medallion member whose account you disabled", "vulnerable_passenger"},
+		// "I press 1" is a phone menu, not the press
+		{"I keep getting cut off after I press 1 on your phone menu", "media_or_virality"},
+		// "hit me up" is not an assault report
+		{"hit me up when the gate is announced", "safety_or_medical"},
+	}
+	for _, c := range cases {
+		v := Decide(c.msg, Signals{Intent: "contact_support", IntentConfidence: 0.9,
+			RetrievalTopScore: 0.5, ModelRoute: RouteAuto}, DefaultThresholds)
+		if contains(v.FiredRules, c.mustNotFire) {
+			t.Errorf("%q wrongly fired %s (all: %v)", c.msg, c.mustNotFire, v.FiredRules)
+		}
+	}
+}
+
+func TestGuardrailsStillFireOnTheRealThing(t *testing.T) {
+	cases := []struct{ msg, mustFire string }{
+		{"my disabled mother was left at the gate with no wheelchair", "vulnerable_passenger"},
+		{"I am a reporter writing about this incident", "media_or_virality"},
+		{"a passenger assaulted my son on flight 1422", "safety_or_medical"},
+	}
+	for _, c := range cases {
+		v := Decide(c.msg, Signals{Intent: "praise", IntentConfidence: 0.9,
+			RetrievalTopScore: 0.5, ModelRoute: RouteAuto}, DefaultThresholds)
+		if !contains(v.FiredRules, c.mustFire) {
+			t.Errorf("%q failed to fire %s (all: %v)", c.msg, c.mustFire, v.FiredRules)
+		}
+	}
+}
+
+// Every escalation reason is concatenated after "Escalated because it ...", so
+// each fragment must read grammatically in that position.
+func TestEscalationReasonsReadAsEnglish(t *testing.T) {
+	seen := map[string]bool{}
+	check := func(v Verdict) {
+		if v.Route != RouteEscalate || seen[v.Reason] {
+			return
+		}
+		seen[v.Reason] = true
+		if strings.HasPrefix(v.Reason, "Escalated because it the ") ||
+			strings.HasPrefix(v.Reason, "Escalated because it intent ") ||
+			strings.HasPrefix(v.Reason, "Escalated because it no ") {
+			t.Errorf("ungrammatical reason: %q", v.Reason)
+		}
+	}
+	for _, msg := range []string{
+		"I want a refund", "let me speak to a human", "my attorney will call",
+		"the crew was racist", "here is my confirmation number ABC123", "nice flight",
+	} {
+		check(Decide(msg, Signals{Intent: "praise", IntentConfidence: 0.95,
+			RetrievalTopScore: 0.5, ModelRoute: RouteAuto}, DefaultThresholds))
+	}
+	check(Decide("hello", Signals{Intent: "praise", IntentConfidence: 0.1,
+		RetrievalTopScore: 0.5, ModelRoute: RouteAuto}, DefaultThresholds))
+	check(Decide("hello", Signals{Intent: "praise", IntentConfidence: 0.95,
+		RetrievalTopScore: 0.0, ModelRoute: RouteAuto}, DefaultThresholds))
+	check(Decide("hello", Signals{Intent: "baggage", IntentConfidence: 0.95,
+		RetrievalTopScore: 0.5, ModelRoute: RouteAuto}, DefaultThresholds))
 }

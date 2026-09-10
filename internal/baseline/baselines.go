@@ -10,8 +10,6 @@ import (
 	"github.com/adity1raut/hiver-support-agent/internal/textx"
 )
 
-// ---------------------------------------------------------------- trivial
-
 // Trivial is the floor: one constant intent, one canned reply, one fixed route.
 // The canned reply is not a straw man - roughly a quarter of Delta's real replies
 // are a variant of "please DM us", so it is a genuine competitor on any
@@ -33,8 +31,6 @@ func (t Trivial) Run(episodeID, msg string) agent.Output {
 		RouteReason: "Fixed policy: this system always routes to " + string(t.Route) + ".",
 	}
 }
-
-// ---------------------------------------------------------------- simple
 
 // Simple is a competent no-LLM system: cross-validated TF-IDF logistic regression
 // for intent, a verbatim copy of the nearest historical reply, and the guardrails

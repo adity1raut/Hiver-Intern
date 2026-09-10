@@ -59,12 +59,16 @@ func main() {
 		out     = flag.String("out", "data/golden/golden_draft.jsonl", "output")
 		model   = flag.String("model", "claude-opus-5", "annotation model")
 		workers = flag.Int("workers", 8, "parallel workers")
+		limit   = flag.Int("limit", 0, "label only the first N items (0 = all); for smoke-testing prompts")
 	)
 	flag.Parse()
 
 	items, err := data.ReadJSONL[goldenItem](*in)
 	if err != nil {
 		log.Fatal(err)
+	}
+	if *limit > 0 && *limit < len(items) {
+		items = items[:*limit]
 	}
 	eps, err := data.ReadEpisodes(*epsPath)
 	if err != nil {

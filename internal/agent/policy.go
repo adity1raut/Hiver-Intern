@@ -32,16 +32,17 @@ func rule(name, reason, pattern string) Rule {
 var HardRules = []Rule{
 	rule("safety_or_medical",
 		"mentions a safety, medical or emergency situation that a human must own",
-		`\b(emergency|ambulance|paramedic|medical|seizure|heart attack|died|passed away|death|funeral|hospital|injur(y|ed)|assault(ed)?|hit me|threat(en(ed|ing))?|unsafe|evacuat|smoke in the cabin|turbulence injur)\b`),
+		`\b(emergency|ambulance|paramedic|medical|seizure|heart attack|died|passed away|death|funeral|hospital|injur(y|ed)|assault(ed)?|threat(en(ed|ing))?|unsafe|evacuat|smoke in the cabin|turbulence injur)\b`),
 	rule("legal_or_regulatory",
 		"raises legal or regulatory exposure",
 		`\b(lawyer|attorney|sue|suing|lawsuit|legal action|small claims|DOT complaint|department of transportation|FAA|litigation|subpoena)\b`),
 	rule("discrimination_or_conduct",
 		"alleges discrimination or serious staff misconduct",
 		`\b(racist|racism|discriminat(e|ed|ion|ory)|sexist|homophob|profil(ed|ing)|harass(ed|ment)?|kicked (me|us) off|removed from the (flight|plane)|police|air marshal)\b`),
+	// "disabled" alone matched "the account you disabled"; it must carry passenger context.
 	rule("vulnerable_passenger",
 		"involves a passenger needing special assistance",
-		`\b(wheelchair|disabilit(y|ies)|disabled|service (dog|animal)|unaccompanied minor|my (baby|infant|toddler)|special assistance|oxygen|autis)\b`),
+		`\b(wheelchair|disabilit(y|ies)|disabled (passenger|person|traveller|traveler|child|veteran|mother|father)|service (dog|animal)|unaccompanied minor|my (baby|infant|toddler)|special assistance|oxygen tank|autis)\b`),
 	rule("money_claim",
 		"is a claim on money or miles and needs an agent with account access",
 		`\b(refund|reimburse|compensat|voucher|charged? me|double charg|overcharg|chargeback|money back|credit back|my miles (are )?(gone|missing)|stolen)\b`),
@@ -49,11 +50,12 @@ var HardRules = []Rule{
 		"requires account or booking data the agent must not handle in public",
 		`\b(confirmation (number|code)|record locator|booking (ref|reference|number)|ticket number|credit card|card number|passport|skymiles (number|account)|last four|SSN)\b`),
 	rule("human_requested",
-		"the customer explicitly asked for a human",
+		"contains an explicit request for a human",
 		`\b(speak to (a|an) (human|person|manager|supervisor|agent)|real person|talk to someone|get me a manager|escalate)\b`),
+	// bare "press" matched "I press 1" in a phone-menu complaint.
 	rule("media_or_virality",
 		"is a press or public-escalation risk",
-		`\b(journalist|reporter|press|going viral|local news|@?FoxNews|@?CNN|blog(ging)? about|filing a report with)\b`),
+		`\b(journalist|reporter|the press|press coverage|news media|going viral|local news|@?FoxNews|@?CNN|blog(ging)? about|filing a report with)\b`),
 }
 
 // Signals are the non-textual inputs to the routing decision.
@@ -94,15 +96,15 @@ func Decide(msg string, s Signals, th Thresholds) Verdict {
 	}
 	if s.IntentConfidence < th.MinIntentConfidence {
 		fired = append(fired, "low_intent_confidence")
-		reasons = append(reasons, "the intent classifier was not confident enough to act")
+		reasons = append(reasons, "was classified with too little confidence to act on")
 	}
 	if s.RetrievalTopScore < th.MinRetrievalScore {
 		fired = append(fired, "no_precedent")
-		reasons = append(reasons, "no sufficiently similar case exists in the brand's history to ground a reply")
+		reasons = append(reasons, "has no sufficiently similar precedent in the brand's history to ground a reply")
 	}
 	if in, ok := taxonomy.Get(s.Intent); ok && in.DefaultAction == "escalate" {
 		fired = append(fired, "intent_default_escalate")
-		reasons = append(reasons, "intent "+s.Intent+" is handled by a human queue by default")
+		reasons = append(reasons, "falls under intent "+s.Intent+", which a human queue owns by default")
 	}
 
 	if len(fired) > 0 {

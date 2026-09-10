@@ -111,8 +111,6 @@ func main() {
 	}
 }
 
-// ------------------------------------------------------------------ labels
-
 func reviewLabels(draftPath, outPath string) {
 	items, err := data.ReadJSONL[goldenItem](draftPath)
 	must(err)
@@ -267,8 +265,6 @@ func summariseLabels(items []goldenItem, path string) {
 	fmt.Printf("  saved %s\n", path)
 }
 
-// ------------------------------------------------------------------ audit
-
 func auditLabels(draftPath, outPath string, n int, seed int64) {
 	items, err := data.ReadJSONL[goldenItem](draftPath)
 	must(err)
@@ -359,8 +355,6 @@ func (g goldenItem) GoldRouteDraft() string {
 	return g.GoldRoute
 }
 
-// ------------------------------------------------------------------ replies
-
 func rateReplies(tasksPath, outPath string) {
 	tasks, err := data.ReadJSONL[replyTask](tasksPath)
 	must(err)
@@ -441,8 +435,6 @@ func parseRating(cmd string) (g, r, t int, sendable, ok bool) {
 	}
 	return g, r, t, sendable, true
 }
-
-// ------------------------------------------------------------------ helpers
 
 func save[T any](path string, items []T) {
 	tmp := path + ".tmp"
