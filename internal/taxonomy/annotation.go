@@ -1,8 +1,7 @@
 package taxonomy
 
 // RoutePolicy is the auto/escalate annotation guideline. The prompts embed it
-// verbatim and docs/ANNOTATION_GUIDE.md is generated from it, so the rule the
-// annotator followed and the rule in the docs cannot drift.
+// verbatim and the annotation guide is generated from it.
 const RoutePolicy = `AUTO vs ESCALATE - annotation rule
 
 Label a message "auto" ONLY IF ALL of these hold:

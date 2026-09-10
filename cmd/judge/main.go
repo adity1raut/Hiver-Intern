@@ -85,7 +85,7 @@ func main() {
 			jobs = append(jobs, job{o.EpisodeID, sys, g.CustomerText, o.Reply, g.DeltaReply})
 		}
 	}
-	// Delta's own reply on the same rubric: the bar the desk clears today.
+	// Delta's own reply, same rubric, as a reference row.
 	if *alsoDelta {
 		for _, g := range golden {
 			jobs = append(jobs, job{g.EpisodeID, "delta-human", g.CustomerText, g.DeltaReply, g.DeltaReply})

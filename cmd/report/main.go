@@ -57,7 +57,7 @@ type auditItem struct {
 	HumanRoute  string `json:"human_route"`
 }
 
-// SystemMetrics is everything measured about one system.
+// SystemMetrics holds every measurement for one system.
 type SystemMetrics struct {
 	Name            string              `json:"name"`
 	Intent          eval.Classification `json:"intent"`
@@ -81,8 +81,8 @@ type JudgeAgg struct {
 	SendableRate  float64    `json:"sendable_rate"`
 	SendableCI    [2]float64 `json:"sendable_ci95"`
 	ViolationRate float64    `json:"violation_rate"`
-	// AutoSendable restricts the sendable rate to replies the system would actually
-	// have sent unattended - the only number describing what a customer receives.
+	// AutoSendable restricts sendable to replies actually routed auto, i.e. what a
+	// customer would have received.
 	AutoSendable  float64 `json:"auto_sendable_rate"`
 	AutoSendableN int     `json:"auto_sendable_n"`
 }
@@ -97,7 +97,7 @@ type Report struct {
 	Calibration    []CalibBin      `json:"calibration"`
 }
 
-// GoldenStats describes the evaluation set itself.
+// GoldenStats describes the evaluation set.
 type GoldenStats struct {
 	N                 int            `json:"n"`
 	ByStratum         map[string]int `json:"by_stratum"`
@@ -172,7 +172,7 @@ func main() {
 		outsBySystem[name] = outs
 		rep.Systems = append(rep.Systems, systemMetrics(name, outs, byID, judgeBy))
 	}
-	// Delta's own replies on the same rubric: the human ceiling.
+	// Delta's own replies, same rubric.
 	if agg, ok := judgeAggFor("delta-human", nil, judgeBy, items); ok {
 		rep.Systems = append(rep.Systems, SystemMetrics{Name: "delta-human (reference)", Judge: agg})
 	}
@@ -433,8 +433,7 @@ func judgeAgreement(judgeBy map[string]eval.JudgeScore, humanPath string) map[st
 	out["composite_spearman"] = spearmanOf(jc, hc)
 	out["sendable_agreement"] = eval.Agreement(js, hs)
 	out["sendable_kappa"] = eval.CohenKappa(js, hs)
-	// A judge that matches on scores but not on the ship/no-ship call is useless
-	// for the decision the metric exists to support, so both are reported.
+	// Both are reported: score agreement without sendable agreement is no use.
 	return out
 }
 
@@ -449,8 +448,7 @@ func ablations(outsBySystem map[string][]agent.Output, byID map[string]goldenIte
 	if !ok {
 		return out
 	}
-	// Re-derive routing from the model's proposal alone to isolate what the
-	// guardrails buy.
+	// Route from the model's proposal alone, to isolate the guardrails.
 	var gold, withRules, modelOnly []string
 	overridden := 0
 	for _, o := range outs {
@@ -473,7 +471,7 @@ func ablations(outsBySystem map[string][]agent.Output, byID map[string]goldenIte
 	out["routing_model_only"] = eval.Route(gold, modelOnly)
 	out["guardrail_overrides"] = overridden
 
-	// Which rules fire, and how often the gold label agreed.
+	// Rule firing counts and precision against the gold route.
 	fired := map[string]int{}
 	firedCorrect := map[string]int{}
 	for _, o := range outs {

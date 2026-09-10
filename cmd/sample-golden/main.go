@@ -1,9 +1,8 @@
 // Command sample-golden draws the evaluation set from the eval pool.
 //
-// Two strata, kept separate on purpose: `random` is a uniform sample and is the
-// only unbiased estimate of live performance; `targeted` over-represents
-// guardrail-tripping messages and rare clusters, and answers whether the system
-// breaks where breaking is expensive.
+// Two strata, never pooled. random is uniform and estimates live performance.
+// targeted over-samples guardrail matches and rare clusters, and shows behaviour
+// where failure is expensive.
 //
 //	go run ./cmd/sample-golden -n-random 120 -n-targeted 80
 package main

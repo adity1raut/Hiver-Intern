@@ -28,8 +28,8 @@ type Output struct {
 	Error        string      `json:"error,omitempty"`
 }
 
-// Agent retrieves precedents, classifies, drafts and proposes a route in one LLM
-// call, then applies the guardrails.
+// Agent retrieves precedents, then classifies, drafts and proposes a route in one
+// LLM call, then applies the guardrails.
 type Agent struct {
 	Client     llm.Client
 	Retriever  *Retriever

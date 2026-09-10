@@ -6,7 +6,7 @@ import (
 )
 
 // OrdinalAgreement compares two raters on the 1-5 rubric. Percent agreement alone
-// misleads here: 4-vs-5 is not the same failure as 1-vs-5.
+// misleads: 4-vs-5 is not the same failure as 1-vs-5.
 type OrdinalAgreement struct {
 	N              int     `json:"n"`
 	ExactAgreement float64 `json:"exact_agreement"`

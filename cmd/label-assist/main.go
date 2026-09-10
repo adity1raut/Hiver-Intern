@@ -1,13 +1,11 @@
 // Command label-assist produces draft labels for the golden set.
 //
-// Two independent passes (A reasons down from the taxonomy, B up from the
-// customer's need), then a third pass adjudicates where they disagree. All passes
-// see the full thread, including Delta's replies - oracle information the system
-// under test never gets, which is what makes these labels a gold standard rather
-// than a second opinion on the same task.
+// Pass A works down from the taxonomy, pass B up from the customer's need, and a
+// third pass adjudicates disagreements. All three see the full thread including
+// Delta's replies, which the system under test never does.
 //
-// The output is a draft; cmd/review turns it into the final golden set.
-// Protocol details in docs/ANNOTATION_GUIDE.md.
+// Output is a draft. cmd/review turns it into the golden set.
+// Protocol in docs/ANNOTATION_GUIDE.md.
 //
 //	go run ./cmd/label-assist
 package main

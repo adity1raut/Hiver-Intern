@@ -24,8 +24,7 @@ type JudgeScore struct {
 	Error     string  `json:"error,omitempty"`
 }
 
-// composite weights grounding highest: an ungrounded reply creates a promise
-// Delta has to honour, which is worse than a tonally flat one.
+// Grounding is weighted highest: an invented promise costs more than a flat tone.
 func composite(g, r, t int) float64 {
 	return (0.5*float64(g) + 0.3*float64(r) + 0.2*float64(t))
 }
@@ -37,7 +36,7 @@ reply go out unedited. Most replies from an automated system are NOT sendable; s
 
 Reply with only a JSON object.`
 
-// JudgeRubric is shared by the prompt and the generated docs so they cannot drift.
+// JudgeRubric is shared by the prompt and the generated docs.
 const JudgeRubric = `SCORING RUBRIC (integers 1-5)
 
 grounding - is every claim supported?
@@ -75,9 +74,8 @@ type Judge struct {
 	Model  string
 }
 
-// Grade scores one reply. The judge never sees which system wrote it. Delta's real
-// reply is offered as one acceptable answer, not as ground truth: treating it as
-// ground truth would make "please DM us" the optimal output.
+// Grade scores one reply. The system name is withheld. Delta's real reply is shown
+// as one acceptable answer, not ground truth, or "please DM us" becomes optimal.
 func (j Judge) Grade(ctx context.Context, episodeID, system, customer, reply, deltaActual string) JudgeScore {
 	s := JudgeScore{EpisodeID: episodeID, System: system}
 	if strings.TrimSpace(reply) == "" {
@@ -110,11 +108,11 @@ often lazy deflections that would themselves score poorly):
 
 Return only:
 {"grounding": <1-5>, "resolution": <1-5>, "tone": <1-5>, "sendable": <true|false>,
- "violation": "<short phrase or empty string>", "rationale": "<one or two sentences>"}`,
+ "violation": "<short phrase or empty string>", "rationale": "<one sentence, max 25 words>"}`,
 		JudgeRubric, customer, reply, deltaActual)
 
 	if err := llm.CompleteJSON(ctx, j.Client, llm.Request{
-		Model: j.Model, MaxTokens: 700, Temperature: 0,
+		Model: j.Model, MaxTokens: 1200, Temperature: 0,
 		System: JudgeSystem, Prompt: prompt,
 	}, &v); err != nil {
 		s.Error = err.Error()
